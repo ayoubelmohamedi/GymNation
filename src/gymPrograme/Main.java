@@ -1,12 +1,28 @@
 package gymPrograme;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.util.Calendar;
 import java.util.Date;
 
-public class Main {
+public class Main extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+		primaryStage.setTitle("Gym Nation");
+		primaryStage.setScene(new Scene(root,300,125));
+		primaryStage.show();
+
+	}
 
 	public static void main(String[] args) {
-		
+
+		launch(args);
 
 		DateTime saidDate = new DateTime(2020, 3, 2);
 		DateTime karimDate = new DateTime(2020, 2, 2);
@@ -37,5 +53,6 @@ public class Main {
 		
 		
 	}
+
 
 }
