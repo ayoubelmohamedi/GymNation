@@ -1,4 +1,4 @@
 package gymPrograme;
 
-public class controller {
+public class Controller {
 }

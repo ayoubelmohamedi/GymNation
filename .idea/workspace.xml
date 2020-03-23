@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javaFX.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gymPrograme/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/gymPrograme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gymPrograme.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gymPrograme.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gymPrograme/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/controler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,12 +37,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../(lookandFeel)jlfgr-1_0.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.15019763" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gymPrograme.Main" />
       <module name="gymPrograme" />
@@ -45,9 +56,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="(lookandFeel)jlfgr-1_0.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/../(lookandFeel)jlfgr-1_0.jar!/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.(lookandFeel)jlfgr-1_0.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -65,10 +81,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="311" y="58" width="847" height="677" key="#Project_Structure" timestamp="1584987024490">
+    <state x="196" y="27" width="895" height="703" key="#Project_Structure" timestamp="1584992678417">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="311" y="58" width="847" height="677" key="#Project_Structure/67.27.1299.741@67.27.1299.741" timestamp="1584987024490" />
+    <state x="196" y="27" width="895" height="703" key="#Project_Structure/67.27.1299.741@67.27.1299.741" timestamp="1584992678417" />
     <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1584987087235">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -81,26 +97,26 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="461" y="114" width="489" height="567" key="DetectedRootsChooserDialog/67.27.1299.741@67.27.1299.741" timestamp="1584979002455" />
-    <state x="166" y="100" width="907" height="484" key="FileChooserDialogImpl" timestamp="1584979000174">
+    <state x="166" y="100" width="907" height="484" key="FileChooserDialogImpl" timestamp="1584990289075">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="166" y="100" width="907" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1584979000174" />
-    <state width="1253" height="314" key="GridCell.Tab.0.bottom" timestamp="1584987901265">
+    <state x="166" y="100" width="907" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1584990289075" />
+    <state width="1253" height="128" key="GridCell.Tab.0.bottom" timestamp="1584993505710">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="314" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1584987901265" />
-    <state width="1253" height="314" key="GridCell.Tab.0.center" timestamp="1584987901265">
+    <state width="1253" height="128" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1584993505710" />
+    <state width="1253" height="128" key="GridCell.Tab.0.center" timestamp="1584993505710">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="314" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1584987901265" />
-    <state width="1253" height="314" key="GridCell.Tab.0.left" timestamp="1584987901264">
+    <state width="1253" height="128" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1584993505710" />
+    <state width="1253" height="128" key="GridCell.Tab.0.left" timestamp="1584993505709">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="314" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1584987901264" />
-    <state width="1253" height="314" key="GridCell.Tab.0.right" timestamp="1584987901265">
+    <state width="1253" height="128" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1584993505709" />
+    <state width="1253" height="128" key="GridCell.Tab.0.right" timestamp="1584993505710">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="314" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1584987901265" />
+    <state width="1253" height="128" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1584993505710" />
     <state x="199" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1584986990318">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
