@@ -43,7 +43,7 @@ public class ManagerPayment {
 			Calendar TIME_TO_PAY = clients22.getPaymentDate().getRegisteredDate();
 			TIME_TO_PAY.add(Calendar.MONTH, 1);
 			Database.insertPaymentDate(TIME_TO_PAY, clients22);
-			
+
 		} else {
 			System.out.println(clients22.getName() + " is already on database.");
 		}
