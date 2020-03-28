@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gymPrograme.Controller">
+   <children>
         <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab text="Clients">
                     <graphic>
                         <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/History24.gif"/>
+                            <Image url="@/toolbarButtonGraphics/general/History24.gif" />
                         </ImageView>
                     </graphic>
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
-
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="269.0" layoutY="158.0" mnemonicParsing="false" text="click me !" />
+                     </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="Payments">
                     <graphic>
                         <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/Information24.gif"/>
+                            <Image url="@/toolbarButtonGraphics/general/Information24.gif" />
                         </ImageView>
                     </graphic>
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listviewPayment_ID" layoutX="1.0" layoutY="3.0" prefHeight="360.0" prefWidth="600.0" />
+                     </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
-    </children>
-</Pane>
+   </children>
+</AnchorPane>

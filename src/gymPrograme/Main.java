@@ -39,7 +39,7 @@ public class Main extends Application {
 //		managerPayment.addClient(karim);
 //		managerPayment.addClient(youssef);
 		
-		managerPayment.getAllClients();
+
 //		System.out.println("---------------");
 //		managerPayment.paySubscription(youssef);
 //		managerPayment.checker(said);

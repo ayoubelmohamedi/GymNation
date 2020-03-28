@@ -99,7 +99,7 @@ public class Database {
 	}
 	
 	public static ArrayList<Clients> fetchDataBase() {
-		ArrayList<Clients> arrayList = new ArrayList<Clients>();
+		ArrayList<Clients> arrayList = new ArrayList<>();
 		
 		try {
 			connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
@@ -121,7 +121,7 @@ public class Database {
 			}
 		}
 		
-		return new ArrayList<Clients>(arrayList);
+		return new ArrayList<>(arrayList);
 	}
 
 	public static void insertPaymentDate(Calendar time_to_pay, Clients clients22) {
