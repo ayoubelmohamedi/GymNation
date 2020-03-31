@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/META-INF/gymPrograme.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/gymPrograme/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gymPrograme/ClientsListViewCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gymPrograme/ListCell.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gymPrograme/AddClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/ManagerPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/ManagerPayment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/controler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/META-INF/gymPrograme.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/ListCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/ListCell.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/gymPrograme/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gymDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/gymDataBase.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gymPrograme/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/ManagerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ManagerPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/ListCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ListCell.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gymPrograme/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +18,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="GymNation" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,22 +106,38 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="166" y="100" width="907" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1585419010018" />
-    <state width="1253" height="234" key="GridCell.Tab.0.bottom" timestamp="1585420511605">
+    <state width="1253" height="199" key="GridCell.Tab.0.bottom" timestamp="1585685372759">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="234" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1585420511605" />
-    <state width="1253" height="234" key="GridCell.Tab.0.center" timestamp="1585420511604">
+    <state width="1253" height="199" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1585685372759" />
+    <state width="1253" height="199" key="GridCell.Tab.0.center" timestamp="1585685372758">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="234" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1585420511604" />
-    <state width="1253" height="234" key="GridCell.Tab.0.left" timestamp="1585420511603">
+    <state width="1253" height="199" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1585685372758" />
+    <state width="1253" height="199" key="GridCell.Tab.0.left" timestamp="1585685372757">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="234" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1585420511603" />
-    <state width="1253" height="234" key="GridCell.Tab.0.right" timestamp="1585420511604">
+    <state width="1253" height="199" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1585685372757" />
+    <state width="1253" height="199" key="GridCell.Tab.0.right" timestamp="1585685372759">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="234" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1585420511604" />
+    <state width="1253" height="199" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1585685372759" />
+    <state width="1253" height="219" key="GridCell.Tab.1.bottom" timestamp="1585680708961">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.bottom/67.27.1299.741@67.27.1299.741" timestamp="1585680708961" />
+    <state width="1253" height="219" key="GridCell.Tab.1.center" timestamp="1585680708959">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.center/67.27.1299.741@67.27.1299.741" timestamp="1585680708959" />
+    <state width="1253" height="219" key="GridCell.Tab.1.left" timestamp="1585680708958">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.left/67.27.1299.741@67.27.1299.741" timestamp="1585680708958" />
+    <state width="1253" height="219" key="GridCell.Tab.1.right" timestamp="1585680708960">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1585680708960" />
     <state x="302" y="95" width="819" height="602" key="NewModule_or_Project.wizard" timestamp="1585408088397">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -135,13 +150,17 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1584986990318" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585331482451">
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585657690228">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1585331482451" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1585657690228" />
     <state x="67" y="106" width="1289" height="592" key="new project wizard" timestamp="1585408048464">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="67" y="106" width="1289" height="592" key="new project wizard/67.27.1299.741@67.27.1299.741" timestamp="1585408048464" />
+    <state x="380" y="175" key="run.anything.popup" timestamp="1585579881305">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1585579881305" />
   </component>
 </project>
