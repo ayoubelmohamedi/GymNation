@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gymPrograme/PaymentPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gymPrograme/paymentPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/AddClientsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/AddClientsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/AddClientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/AddClientsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/ManagerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ManagerPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +96,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="547" y="294" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1299.741@67.27.1299.741" timestamp="1584971525760" />
+    <state x="449" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586107872829">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="449" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1299.741@67.27.1299.741" timestamp="1586107872829" />
     <state x="461" y="114" width="489" height="567" key="DetectedRootsChooserDialog" timestamp="1584979002455">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
