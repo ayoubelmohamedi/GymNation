@@ -34,7 +34,6 @@ public class ClientsListViewCell extends ListCell<Clients> {
             if (mLLoader == null) {
                 mLLoader = new FXMLLoader(getClass().getResource("/gymPrograme/ListCell.fxml"));
                 mLLoader.setController(this);
-
                 try {
                     mLLoader.load();
                 } catch (IOException e) {

@@ -20,24 +20,30 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
-    private ListView<Clients> allClientsList;
-
+    public ListView<Clients> allClientsList;
 
     ManagerPayment managerPayment;
-    private ObservableList<Clients> clientsObservableList;
+
+    public static ObservableList<Clients> clientsObservableList;
 
     public Controller() {
         clientsObservableList = FXCollections.observableArrayList();
         managerPayment = new ManagerPayment();
 
         //add to observableList
-        clientsObservableList.addAll(managerPayment.getAllClients());
+        if (managerPayment.getAllClients() != null){
+            clientsObservableList.addAll(managerPayment.getAllClients());
+        }else {
+            System.out.println("there is no clients");
+        }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        allClientsList.setItems(clientsObservableList);
-        allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
+            allClientsList.setItems(clientsObservableList);
+            allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
+
     }
 
 }

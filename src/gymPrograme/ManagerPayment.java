@@ -1,12 +1,14 @@
 package gymPrograme;
 
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 public class ManagerPayment {
 
-    private ArrayList<Clients> clientsList;
+    private ObservableList<Clients> clientsList;
     Database database_instance = Database.getInstance();
 
     public ManagerPayment() {
@@ -14,10 +16,7 @@ public class ManagerPayment {
         clientsList = Database.fetchDataBase();
     }
 
-    public ArrayList<Clients> getAllClients() {
-    	if (clientsList.isEmpty()){
-    		return null;
-		}
+    public ObservableList<Clients> getAllClients() {
     	return clientsList;
     }
 

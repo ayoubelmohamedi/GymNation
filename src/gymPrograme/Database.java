@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.sqlite.SQLiteConfig.Pragma;
 
 public class Database {
@@ -98,9 +100,8 @@ public class Database {
 		}
 	}
 	
-	public static ArrayList<Clients> fetchDataBase() {
-		ArrayList<Clients> arrayList = new ArrayList<>();
-		
+	public static ObservableList<Clients> fetchDataBase() {
+		ObservableList<Clients> arrayList = FXCollections.observableArrayList();
 		try {
 			connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
 			statement = connection.createStatement();
@@ -121,7 +122,7 @@ public class Database {
 			}
 		}
 		
-		return new ArrayList<>(arrayList);
+		return arrayList;
 	}
 
 	public static void insertPaymentDate(Calendar time_to_pay, Clients clients22) {

@@ -1,8 +1,12 @@
 package gymPrograme;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -10,6 +14,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+
 
 public class AddClientsController {
 
@@ -43,7 +49,10 @@ public class AddClientsController {
                 DateTime newDateTime = new DateTime(year, month, day);
                 Clients newClients = new Clients(clientName, clientID, clientPhone, clientAge, newDateTime);
                 managerPayment.addClient(newClients);
+                Controller.clientsObservableList.add(newClients);
 
+//                clientsObservableList.setAll(managerPayment.getAllClients());
+//                allClientsList.getItems().setAll(clientsObservableList);
                 System.out.println(clientName + " added successfully :D ");
             }
         } else {
@@ -67,4 +76,9 @@ public class AddClientsController {
             return true;
         }
     }
+    //clear fields of adding clients after pressing "save"
+    private void clearFields(){
+
+    }
+
 }
