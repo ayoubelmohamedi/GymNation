@@ -44,9 +44,9 @@ public class ManagerPayment {
         }
     }
 
-    private boolean isClientExist(Clients clientForCheck) {
+    public boolean isClientExist(Clients clientForCheck) {
         for (Clients client : clientsList) {
-            if (client.getName().equals(clientForCheck.getName())) {
+            if (client.getName().trim().equals(clientForCheck.getName()) || client.getIdCard().trim().equals(clientForCheck.getIdCard())) {
                 return true;
             }
         }

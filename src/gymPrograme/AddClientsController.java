@@ -40,14 +40,14 @@ public class AddClientsController {
         String clientDate = calenderField_id.getEditor().getText();
 
         if (managerPayment != null) {
-            if (isFieldEmpty(namefield_id,identificationField_id,calenderField_id)) {
+            if ((!isFieldEmpty(namefield_id, identificationField_id, calenderField_id)) && validateJavaDate(clientDate)) {
                 if (isIntTextField(ageField_id)) {
                     clientAge = Integer.valueOf(ageField_id.getText());
                 } else {
                     clientAge = 0;
                     System.out.println("(is empty or null) give default value 0");
                 }
-                
+
                 String[] dateParts = clientDate.split("/");
                 int month = Integer.valueOf(dateParts[0]);
                 int day = Integer.valueOf(dateParts[1]);
@@ -56,11 +56,11 @@ public class AddClientsController {
                 DateTime newDateTime = new DateTime(year, month, day);
                 Clients newClients = new Clients(clientName, clientID, clientPhone, clientAge, newDateTime);
                 managerPayment.addClient(newClients);
-                Controller.clientsObservableList.add(newClients);
+                if (!managerPayment.isClientExist(newClients)) {
+                    Controller.clientsObservableList.add(newClients);
+                    System.out.println(clientName + " added successfully :D ");
+                }
 
-//                clientsObservableList.setAll(managerPayment.getAllClients());
-//                allClientsList.getItems().setAll(clientsObservableList);
-                System.out.println(clientName + " added successfully :D ");
                 clearFields();
             }
         } else {
@@ -94,7 +94,7 @@ public class AddClientsController {
         calenderField_id.getEditor().setText("");
     }
 
-    //check if textfiled contains int value
+    //check if textFiled contains int value
     private boolean isIntTextField(TextField textField) {
         if (!(textField.getText().isEmpty() || textField.getText() == null)) {
             if (Integer.valueOf(textField.getText()) % 1 == 0) {
@@ -106,20 +106,20 @@ public class AddClientsController {
         return false;
     }
 
-    private boolean isFieldEmpty(TextField namefield, TextField clientId,DatePicker calenderField ){
-        TextField [] fields = {namefield,clientId,calenderField.getEditor()};
+    private boolean isFieldEmpty(TextField namefield, TextField clientId, DatePicker calenderField) {
+        TextField[] fields = {namefield, clientId, calenderField.getEditor()};
         int value = 0;
-        for (TextField field:fields) {
-            if (field.getText().trim().isEmpty() || field.getText() == null){
+        for (TextField field : fields) {
+            if (field.getText().trim().isEmpty() || field.getText() == null) {
                 value = 0;
-            }else{
+            } else {
                 value = 1;
             }
         }
-        if (value == 1){
-            return true;
+        if (value == 1) {
+            return false;
         }
-        return false;
+        return true;
     }
 
 }
