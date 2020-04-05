@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -39,13 +40,14 @@ public class AddClientsController {
         String clientDate = calenderField_id.getEditor().getText();
 
         if (managerPayment != null) {
-            if ((!clientName.isEmpty()) || (!clientID.isEmpty()) || validateJavaDate(clientDate)) {
+            if (isFieldEmpty(namefield_id,identificationField_id,calenderField_id)) {
                 if (isIntTextField(ageField_id)) {
                     clientAge = Integer.valueOf(ageField_id.getText());
                 } else {
                     clientAge = 0;
                     System.out.println("(is empty or null) give default value 0");
                 }
+                
                 String[] dateParts = clientDate.split("/");
                 int month = Integer.valueOf(dateParts[0]);
                 int day = Integer.valueOf(dateParts[1]);
@@ -104,9 +106,20 @@ public class AddClientsController {
         return false;
     }
 
-//    private boolean isFieldEmpty(TextField namefield, TextField clientId,String dateField ){
-//        if (namefield.getText() == null || namefield.getText().trim().isEmpty() || clientId.getText() );
-//
-//    }
+    private boolean isFieldEmpty(TextField namefield, TextField clientId,DatePicker calenderField ){
+        TextField [] fields = {namefield,clientId,calenderField.getEditor()};
+        int value = 0;
+        for (TextField field:fields) {
+            if (field.getText().trim().isEmpty() || field.getText() == null){
+                value = 0;
+            }else{
+                value = 1;
+            }
+        }
+        if (value == 1){
+            return true;
+        }
+        return false;
+    }
 
 }
