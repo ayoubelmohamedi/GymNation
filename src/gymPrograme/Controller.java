@@ -31,9 +31,9 @@ public class Controller implements Initializable {
         managerPayment = new ManagerPayment();
 
         //add to observableList
-        if (managerPayment.getAllClients() != null){
+        if (managerPayment.getAllClients() != null) {
             clientsObservableList.addAll(managerPayment.getAllClients());
-        }else {
+        } else {
             System.out.println("there is no clients");
         }
 
@@ -41,8 +41,8 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-            allClientsList.setItems(clientsObservableList);
-            allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
+        allClientsList.setItems(clientsObservableList);
+        allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
 
     }
 

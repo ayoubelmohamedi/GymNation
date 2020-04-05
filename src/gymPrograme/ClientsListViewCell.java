@@ -25,7 +25,7 @@ public class ClientsListViewCell extends ListCell<Clients> {
         super.updateItem(clients, empty);
 
 
-        if(empty || clients == null) {
+        if (empty || clients == null) {
 
             setText(null);
             setGraphic(null);

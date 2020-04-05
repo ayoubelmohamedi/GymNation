@@ -17,7 +17,7 @@ public class ManagerPayment {
     }
 
     public ObservableList<Clients> getAllClients() {
-    	return clientsList;
+        return clientsList;
     }
 
     public void checker(Clients clientObject) {
