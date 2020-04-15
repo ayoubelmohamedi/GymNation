@@ -5,10 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.text.DateFormat;
@@ -23,7 +20,6 @@ public class Controller implements Initializable {
     public ListView<Clients> allClientsList;
 
     ManagerPayment managerPayment;
-
     public static ObservableList<Clients> clientsObservableList;
 
     public Controller() {
@@ -36,13 +32,17 @@ public class Controller implements Initializable {
         } else {
             System.out.println("there is no clients");
         }
-
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        allClientsList.setItems(clientsObservableList);
-        allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
+        if (clientsObservableList.isEmpty()){
+           allClientsList.setPlaceholder(new Label("No Client found !"));
+        }else{
+            allClientsList.setItems(clientsObservableList);
+            allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
+        }
+
 
     }
 

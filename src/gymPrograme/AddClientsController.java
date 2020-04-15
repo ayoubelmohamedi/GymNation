@@ -42,16 +42,16 @@ public class AddClientsController {
         if (managerPayment != null) {
             if ((!isFieldEmpty(namefield_id, identificationField_id, calenderField_id)) && validateJavaDate(clientDate)) {
                 if (isIntTextField(ageField_id)) {
-                    clientAge = Integer.valueOf(ageField_id.getText());
+                    clientAge = Integer.parseInt(ageField_id.getText());
                 } else {
                     clientAge = 0;
                     System.out.println("(is empty or null) give default value 0");
                 }
 
                 String[] dateParts = clientDate.split("/");
-                int month = Integer.valueOf(dateParts[0]);
-                int day = Integer.valueOf(dateParts[1]);
-                int year = Integer.valueOf(dateParts[2]);
+                int month = Integer.parseInt(dateParts[0]);
+                int day = Integer.parseInt(dateParts[1]);
+                int year = Integer.parseInt(dateParts[2]);
 
                 DateTime newDateTime = new DateTime(year, month, day);
                 Clients newClients = new Clients(clientName, clientID, clientPhone, clientAge, newDateTime);
@@ -97,7 +97,7 @@ public class AddClientsController {
     //check if textFiled contains int value
     private boolean isIntTextField(TextField textField) {
         if (!(textField.getText().isEmpty() || textField.getText() == null)) {
-            if (Integer.valueOf(textField.getText()) % 1 == 0) {
+            if ((Integer.parseInt(textField.getText())) % 1 == 0) {
                 return true;
             } else {
                 return false;

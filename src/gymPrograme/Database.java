@@ -6,12 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.sqlite.SQLiteConfig.Pragma;
 
 public class Database {
 
@@ -125,11 +123,11 @@ public class Database {
 
     public static void insertPaymentDate(Calendar time_to_pay, Clients clients22) {
         try {
-            int DAY = Integer.valueOf(time_to_pay.get(Calendar.DATE));
-            int MONTH = Integer.valueOf(time_to_pay.get(Calendar.MONTH));
-            int YEAR = Integer.valueOf(time_to_pay.get(Calendar.YEAR));
+            int DAY = time_to_pay.get(Calendar.DATE);
+            int MONTH = time_to_pay.get(Calendar.MONTH);
+            int YEAR = time_to_pay.get(Calendar.YEAR);
 
-            String clientsName = clients22.getIdCard().toString();
+            String clientsName = clients22.getIdCard();
 
             String sqlite = "insert into PAYMENTS( clientID, payDay, payMONTH, payYEAR) values (?,?,?,?)";
             connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
@@ -161,11 +159,11 @@ public class Database {
 
     public void modifyPaymentDate(Calendar newPaymentDay, Clients clients) {
         try {
-            int DAY = Integer.valueOf(newPaymentDay.get(Calendar.DATE));
-            int MONTH = Integer.valueOf(newPaymentDay.get(Calendar.MONTH));
-            int YEAR = Integer.valueOf(newPaymentDay.get(Calendar.YEAR));
+            int DAY = newPaymentDay.get(Calendar.DATE);
+            int MONTH = newPaymentDay.get(Calendar.MONTH);
+            int YEAR = newPaymentDay.get(Calendar.YEAR);
 
-            String clientsName = clients.getIdCard().toString();
+            String clientsName = clients.getIdCard();
 
             String sqlite = "UPDATE PAYMENTS SET payDAY = ? , payMONTH = ? , payYEAR = ? WHERE clientID = ? ";
             connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
