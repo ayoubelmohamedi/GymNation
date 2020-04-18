@@ -24,7 +24,7 @@ public class PaymentPageController implements Initializable {
 
     public static ObservableList<Clients> clientsToPay;
 
-    private Task<ObservableList<Clients>> task;
+//    private Task<ObservableList<Clients>> task;
 
     ManagerPayment managerPayment;
 
@@ -52,32 +52,25 @@ public class PaymentPageController implements Initializable {
 //    }
 
     private void startThread() {
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (!Thread.currentThread().isInterrupted()) {
-                    for (Clients client : managerPayment.getAllClients()) {
-                        if (managerPayment.needsToPayStatus(client)) {
-                            if (!isOnList(client)) {
-                                clientsToPay.add(client);
-                                System.out.println(client.getName() + "needs to pay");
-                            }
+        Thread thread = new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                for (Clients client : managerPayment.getAllClients()) {
+                    System.out.println(managerPayment.needsToPayStatus(client));
+                    if (managerPayment.needsToPayStatus(client)) {
+                        if (!isOnList(client)) {
+                            clientsToPay.add(client);
                         }
                     }
-                    paymentClientList.setItems(clientsToPay);
-
-
-                    try {
-                        Thread.sleep(100000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                }
+                try {
+                    Thread.sleep(100000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });
         thread.setDaemon(true);
         thread.start();
-
     }
 
     private boolean isOnList(Clients clientSelected) {
@@ -92,10 +85,17 @@ public class PaymentPageController implements Initializable {
         return false;
     }
 
+    public void addToList(Clients clients){
+        if (!isOnList(clients)){
+            clientsToPay.add(clients);
+        }
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (clientsToPay.isEmpty()) {
-
+            paymentClientList.setPlaceholder(new Label("No Client found !"));
         } else {
             paymentClientList.setItems(clientsToPay);
             paymentClientList.setCellFactory(clientsListView -> new ClientsListViewCell());

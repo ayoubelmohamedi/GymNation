@@ -42,8 +42,6 @@ public class Controller implements Initializable {
             allClientsList.setItems(clientsObservableList);
             allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
         }
-
-
     }
 
 }

@@ -16,7 +16,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-
 public class AddClientsController {
 
     @FXML
@@ -26,9 +25,11 @@ public class AddClientsController {
     private DatePicker calenderField_id;
 
     ManagerPayment managerPayment;
+    PaymentPageController paymentPageController;
 
     public AddClientsController() {
         managerPayment = new ManagerPayment();
+        paymentPageController = new PaymentPageController();
     }
 
     public void saveButtonAction() {
@@ -57,6 +58,9 @@ public class AddClientsController {
                 Clients newClients = new Clients(clientName, clientID, clientPhone, clientAge, newDateTime);
                 managerPayment.addClient(newClients);
                 if (!managerPayment.isClientExist(newClients)) {
+                    if (managerPayment.needsToPayStatus(newClients)){
+                        paymentPageController.addToList(newClients);
+                    }
                     Controller.clientsObservableList.add(newClients);
                     System.out.println(clientName + " added successfully :D ");
                 }

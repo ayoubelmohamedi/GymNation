@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class ManagerPayment {
 
-    private ObservableList<Clients> clientsList;
+    public static ObservableList<Clients> clientsList;
     Database database_instance = Database.getInstance();
 
     public ManagerPayment() {
