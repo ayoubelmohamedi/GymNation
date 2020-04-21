@@ -37,6 +37,7 @@ public class ManagerPayment {
             Database.insertToDatabase(clients22);
             Calendar TIME_TO_PAY = clients22.getPaymentDate().getRegisteredDate();
             TIME_TO_PAY.add(Calendar.MONTH, 1);
+            clients22.getPaymentDate().setNeedsToPay(false);
             Database.insertPaymentDate(TIME_TO_PAY, clients22);
 
         } else {

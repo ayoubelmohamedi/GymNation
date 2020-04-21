@@ -92,12 +92,13 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <Button mnemonicParsing="false" text="pay" textFill="#431f80" BorderPane.alignment="CENTER" />
+                        <RadioButton fx:id="payStatus_id" disable="true" mnemonicParsing="false" textFill="#404040" BorderPane.alignment="CENTER"
+                        style="-jfx"/>
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <center>
-                        <Button mnemonicParsing="false" text="delete" textFill="#7419b5" BorderPane.alignment="CENTER" />
+                        <Button mnemonicParsing="false" text="detail" textFill="#7419b5" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                </children>

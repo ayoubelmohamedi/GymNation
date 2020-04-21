@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gymPrograme/bodybuilding-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gymPrograme/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/addClientsPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/addClientsPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/AddClientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/AddClientsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/Clients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/ClientsListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ClientsListViewCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/DateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/DateTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gymPrograme/ListCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ListCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/addClientsPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/addClientsPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gymPrograme/clientsInforPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/clientsInforPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gymPrograme/ManagerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ManagerPayment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,25 +117,25 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="166" y="100" width="907" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1585419010018" />
-    <state width="1394" height="249" key="GridCell.Tab.0.bottom" timestamp="1587479086194">
+    <state width="1394" height="249" key="GridCell.Tab.0.bottom" timestamp="1587479804770">
       <screen x="1366" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="249" key="GridCell.Tab.0.bottom/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479086194" />
+    <state width="1394" height="249" key="GridCell.Tab.0.bottom/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479804770" />
     <state width="1253" height="193" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1587431586599" />
-    <state width="1394" height="249" key="GridCell.Tab.0.center" timestamp="1587479086194">
+    <state width="1394" height="249" key="GridCell.Tab.0.center" timestamp="1587479804770">
       <screen x="1366" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="249" key="GridCell.Tab.0.center/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479086194" />
+    <state width="1394" height="249" key="GridCell.Tab.0.center/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479804770" />
     <state width="1253" height="193" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1587431586598" />
-    <state width="1394" height="249" key="GridCell.Tab.0.left" timestamp="1587479086194">
+    <state width="1394" height="249" key="GridCell.Tab.0.left" timestamp="1587479804769">
       <screen x="1366" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="249" key="GridCell.Tab.0.left/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479086194" />
+    <state width="1394" height="249" key="GridCell.Tab.0.left/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479804769" />
     <state width="1253" height="193" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1587431586597" />
-    <state width="1394" height="249" key="GridCell.Tab.0.right" timestamp="1587479086194">
+    <state width="1394" height="249" key="GridCell.Tab.0.right" timestamp="1587479804770">
       <screen x="1366" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="249" key="GridCell.Tab.0.right/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479086194" />
+    <state width="1394" height="249" key="GridCell.Tab.0.right/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1587479804770" />
     <state width="1253" height="193" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1587431586598" />
     <state width="1253" height="219" key="GridCell.Tab.1.bottom" timestamp="1585953015703">
       <screen x="67" y="27" width="1299" height="741" />

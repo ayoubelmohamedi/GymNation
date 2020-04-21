@@ -26,6 +26,10 @@ public class DateTime {
 		this.needsToPay = needsToPay;
 	}
 
+	public boolean getNeedsTopay(){
+		return needsToPay;
+	}
+
 	
 	public String getRegiterationDate() {
 		String str =  getDay() + "/" + getMonth()+ "/" + getYear();
