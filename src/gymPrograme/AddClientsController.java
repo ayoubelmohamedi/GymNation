@@ -58,7 +58,7 @@ public class AddClientsController {
                 Clients newClients = new Clients(clientName, clientID, clientPhone, clientAge, newDateTime);
                 managerPayment.addClient(newClients);
                 if (!managerPayment.isClientExist(newClients)) {
-                    if (managerPayment.needsToPayStatus(newClients)){
+                    if (managerPayment.needsToPayStatus(newClients)) {
                         paymentPageController.addToList(newClients);
                     }
                     Controller.clientsObservableList.add(newClients);

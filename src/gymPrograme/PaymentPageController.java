@@ -5,6 +5,8 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -20,7 +23,10 @@ import java.util.ResourceBundle;
 public class PaymentPageController implements Initializable {
 
     @FXML
-    public ListView<Clients> paymentClientList;
+    private ListView<Clients> paymentClientList;
+
+    @FXML
+    private TextField searchBar_id;
 
     public static ObservableList<Clients> clientsToPay;
 
@@ -74,9 +80,9 @@ public class PaymentPageController implements Initializable {
     }
 
     private boolean isOnList(Clients clientSelected) {
-        if (!clientsToPay.isEmpty()){
+        if (!clientsToPay.isEmpty()) {
             for (Clients client : clientsToPay) {
-                if (client == clientSelected){
+                if (client == clientSelected) {
                     return true;
                 }
             }
@@ -85,8 +91,8 @@ public class PaymentPageController implements Initializable {
         return false;
     }
 
-    public void addToList(Clients clients){
-        if (!isOnList(clients)){
+    public void addToList(Clients clients) {
+        if (!isOnList(clients)) {
             clientsToPay.add(clients);
         }
     }
@@ -99,6 +105,38 @@ public class PaymentPageController implements Initializable {
         } else {
             paymentClientList.setItems(clientsToPay);
             paymentClientList.setCellFactory(clientsListView -> new ClientsListViewCell());
+
+            // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+            FilteredList<Clients> filteredData = new FilteredList<>(clientsToPay, p -> true);
+
+            // 2. Set the filter Predicate whenever the filter changes.
+            searchBar_id.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredData.setPredicate(clients -> {
+                    // If filter text is empty, display all persons.
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+
+                    // Compare first name and last name of every person with filter text.
+                    String lowerCaseFilter = newValue.toLowerCase();
+
+                    if (clients.getName().toLowerCase().contains(lowerCaseFilter)) {
+                        return true; // Filter matches first name.
+                    } else if (clients.getIdCard().toLowerCase().contains(lowerCaseFilter)) {
+                        return true; // Filter matches Id.
+                    }
+                    return false; // Does not match.
+                });
+            });
+
+            // 3. Wrap the FilteredList in a SortedList.
+            SortedList<Clients> sortedData = new SortedList<>(filteredData);
+
+            // 4. Bind the SortedList comparator to the TableView comparator.
+//            sortedData.comparatorProperty().bind(paymentClientList.comparatorProperty());
+
+            // 5. Add sorted (and filtered) data to the table.
+            paymentClientList.setItems(sortedData);
         }
     }
 }

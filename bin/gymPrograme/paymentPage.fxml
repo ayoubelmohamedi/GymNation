@@ -32,7 +32,7 @@
                      <children>
                         <BorderPane layoutX="95.0" layoutY="-72.0" prefHeight="42.0" prefWidth="537.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <center>
-                              <TextField promptText="(search by name)" BorderPane.alignment="CENTER" />
+                              <TextField fx:id="searchBar_id" promptText="(search by name)" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </children></AnchorPane>
