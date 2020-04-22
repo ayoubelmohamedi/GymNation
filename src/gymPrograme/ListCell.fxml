@@ -87,18 +87,11 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <RadioButton fx:id="payStatus_id" disable="true" mnemonicParsing="false" textFill="#404040" BorderPane.alignment="CENTER"
-                        style="-jfx"/>
-                     </center>
-                  </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                     <center>
-                        <Button mnemonicParsing="false" text="detail" textFill="#7419b5" BorderPane.alignment="CENTER" />
+                        <Button fx:id="detailButton_id" mnemonicParsing="false" text="detail" textFill="#7419b5" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                </children>

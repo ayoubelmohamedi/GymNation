@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:id="gridPane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="gridPane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" stylesheets="style.css">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="113.0" />
        <ColumnConstraints hgrow="SOMETIMES" maxWidth="405.0" minWidth="10.0" prefWidth="166.0" />
@@ -92,12 +92,13 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <Button mnemonicParsing="false" text="pay" textFill="#431f80" BorderPane.alignment="CENTER" />
+                        <RadioButton fx:id="payStatus_id" disable="true" mnemonicParsing="false" textFill="#404040" BorderPane.alignment="CENTER"
+                        style="-jfx"/>
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <center>
-                        <Button mnemonicParsing="false" text="delete" textFill="#7419b5" BorderPane.alignment="CENTER" />
+                        <Button mnemonicParsing="false" text="detail" textFill="#7419b5" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                </children>
