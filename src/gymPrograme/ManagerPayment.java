@@ -2,6 +2,11 @@ package gymPrograme;
 
 import javafx.collections.ObservableList;
 
+import java.text.ParseException;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -90,6 +95,30 @@ public class ManagerPayment {
 
     private String getDate(Calendar cal) {
         return "" + cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
+    }
+
+    public String getClientPayDate(Clients clients){
+        return getDate(database_instance.getPaymentDate(clients));
+    }
+
+    public String Daysbetween(Clients client){
+        if (isClientExist(client)){
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            Calendar date = Calendar.getInstance();
+            String currentDate = "" + date.get(Calendar.DATE) + "/" + (date.get(Calendar.MONTH)) + "/" + date.get(Calendar.YEAR);
+            String paymentDate = getClientPayDate(client);
+            try {
+                LocalDateTime date1 = LocalDate.parse(currentDate, dtf);
+                LocalDateTime date2 = LocalDate.parse(paymentDate, dtf);
+                long daysBetween = Duration.between(date1, date2).toDays();
+                System.out.println ("Days: " + daysBetween);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            return ;
+        }
+        return "not found";
+
     }
 
 }

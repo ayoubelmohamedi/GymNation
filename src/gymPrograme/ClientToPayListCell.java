@@ -2,32 +2,39 @@ package gymPrograme;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.control.RadioButton;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 
-public class ClientsListViewCell extends ListCell<Clients> {
+public class ClientToPayListCell extends ListCell<Clients> {
+
+    ManagerPayment managerPayment = new ManagerPayment();
     @FXML
-    private Label name_id;
+    private Label nameField_id;
 
     @FXML
-    private Label idCard_id;
+    private Label idCardField_id;
 
     @FXML
-    private GridPane gridPane_id;
+    private Label paymentTime_id;
 
     @FXML
-    private RadioButton payStatus_id;
+    private Label lateForDay_id;
+
+    @FXML
+    private GridPane gridPaneToPay_id;
 
     private FXMLLoader mLLoader;
 
     @Override
     protected void updateItem(Clients clients, boolean empty) {
         super.updateItem(clients, empty);
+
 
         if (empty || clients == null) {
 
@@ -44,15 +51,18 @@ public class ClientsListViewCell extends ListCell<Clients> {
                     e.printStackTrace();
                 }
             }
-            name_id.setText(clients.getName());
-            idCard_id.setText(clients.getIdCard());
-//            if (clients.needsToPay()){
-//
-//
-//            }
+
+            String paymentDate = managerPayment.getClientPayDate(clients);
+
+            nameField_id.setText(clients.getName());
+            idCardField_id.setText(clients.getIdCard());
+            paymentTime_id.setText(paymentDate);
+            //TODO compare currentDate with paymentDate in database ; return days between
+
+            lateForDay_id.setText("");
 
             setText(null);
-            setGraphic(gridPane_id);
+            setGraphic(gridPaneToPay_id);
 
         }
     }
