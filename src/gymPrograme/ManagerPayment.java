@@ -2,11 +2,13 @@ package gymPrograme;
 
 import javafx.collections.ObservableList;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -104,17 +106,18 @@ public class ManagerPayment {
     public String Daysbetween(Clients client){
 
         if (isClientExist(client)){
-//            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//            Calendar date = Calendar.getInstance();
-//            String currentDate = date.get(Calendar.DATE) + "/" + (date.get(Calendar.MONTH)) + "/" + date.get(Calendar.YEAR);
-//            String paymentDate = getClientPayDate(client);
-//            LocalDate date1 = LocalDate.parse(currentDate,dtf);
-//            LocalDate date2 = LocalDate.parse(paymentDate, dtf);
-//            long days = Duration.between(date1, date2).toDays();
-            String daysBetween = "day(s) left : " + client.getAge();
-            return daysBetween;
+            Calendar currentDate = Calendar.getInstance();
+            Calendar paymentDate = database_instance.getPaymentDate(client);
+            String current = getDate(currentDate);
+            String payDate = getClientPayDate(client);
+            DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date1 = LocalDate.of(paymentDate.get(Calendar.YEAR),paymentDate.get(Calendar.MONTH),paymentDate.get(Calendar.DATE));
+            LocalDate date2 = LocalDate.of(currentDate.get(Calendar.YEAR),currentDate.get(Calendar.MONTH),currentDate.get(Calendar.DATE));
+            long daysBetween = ChronoUnit.DAYS.between(date1,date2);
+            String text = "passed day(s) : " + daysBetween;
+            return text;
         }
-        return "not found";
+        return "passed day(s) : none";
 
     }
 
