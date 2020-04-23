@@ -102,20 +102,17 @@ public class ManagerPayment {
     }
 
     public String Daysbetween(Clients client){
+
         if (isClientExist(client)){
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            Calendar date = Calendar.getInstance();
-            String currentDate = "" + date.get(Calendar.DATE) + "/" + (date.get(Calendar.MONTH)) + "/" + date.get(Calendar.YEAR);
-            String paymentDate = getClientPayDate(client);
-            try {
-                LocalDateTime date1 = LocalDate.parse(currentDate, dtf);
-                LocalDateTime date2 = LocalDate.parse(paymentDate, dtf);
-                long daysBetween = Duration.between(date1, date2).toDays();
-                System.out.println ("Days: " + daysBetween);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            return ;
+//            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//            Calendar date = Calendar.getInstance();
+//            String currentDate = date.get(Calendar.DATE) + "/" + (date.get(Calendar.MONTH)) + "/" + date.get(Calendar.YEAR);
+//            String paymentDate = getClientPayDate(client);
+//            LocalDate date1 = LocalDate.parse(currentDate,dtf);
+//            LocalDate date2 = LocalDate.parse(paymentDate, dtf);
+//            long days = Duration.between(date1, date2).toDays();
+            String daysBetween = "day(s) left : " + client.getAge();
+            return daysBetween;
         }
         return "not found";
 

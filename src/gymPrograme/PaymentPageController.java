@@ -104,7 +104,7 @@ public class PaymentPageController implements Initializable {
             paymentClientList.setPlaceholder(new Label("No Client found !"));
         } else {
             paymentClientList.setItems(clientsToPay);
-            paymentClientList.setCellFactory(clientsListView -> new ClientsListViewCell());
+            paymentClientList.setCellFactory(clientsListView -> new ClientToPayListCell());
 
             // 1. Wrap the ObservableList in a FilteredList (initially display all data).
             FilteredList<Clients> filteredData = new FilteredList<>(clientsToPay, p -> true);

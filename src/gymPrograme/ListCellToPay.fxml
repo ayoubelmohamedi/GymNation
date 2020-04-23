@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:id="gridPaneToPay_id" maxHeight="Infinity" maxWidth="Infinity" prefHeight="83.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gymPrograme.ClientToPayListCell">
+<GridPane fx:id="gridPaneToPay_id" maxHeight="Infinity" maxWidth="Infinity" prefHeight="83.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="113.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="405.0" minWidth="10.0" prefWidth="166.0" />

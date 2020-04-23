@@ -7,9 +7,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 
 public class ClientToPayListCell extends ListCell<Clients> {
 
@@ -43,7 +40,7 @@ public class ClientToPayListCell extends ListCell<Clients> {
 
         } else {
             if (mLLoader == null) {
-                mLLoader = new FXMLLoader(getClass().getResource("/gymPrograme/ListCell.fxml"));
+                mLLoader = new FXMLLoader(getClass().getResource("/gymPrograme/ListCellToPay.fxml"));
                 mLLoader.setController(this);
                 try {
                     mLLoader.load();
@@ -57,9 +54,8 @@ public class ClientToPayListCell extends ListCell<Clients> {
             nameField_id.setText(clients.getName());
             idCardField_id.setText(clients.getIdCard());
             paymentTime_id.setText(paymentDate);
-            //TODO compare currentDate with paymentDate in database ; return days between
 
-            lateForDay_id.setText("");
+            lateForDay_id.setText(managerPayment.Daysbetween(clients));
 
             setText(null);
             setGraphic(gridPaneToPay_id);
