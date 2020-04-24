@@ -1,6 +1,7 @@
 package gymPrograme;
 
 public class Clients {
+
     private String name;
     private String idCard;
     private int age;
@@ -56,4 +57,21 @@ public class Clients {
     	return paymentDate.getNeedsTopay();
 	}
 
+	//TODO change the implementation  of hashcode and equals
+    @Override
+    public int hashCode() {
+        return this.getIdCard().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj){
+            return true;
+        }
+        if (obj == null || (obj.getClass() != this.getClass())){
+            return false;
+        }
+        String objID = ((Clients) obj).getIdCard();
+        return this.getIdCard().equals(objID);
+    }
 }

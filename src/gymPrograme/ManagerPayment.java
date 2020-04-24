@@ -99,21 +99,20 @@ public class ManagerPayment {
         return "" + cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
     }
 
-    public String getClientPayDate(Clients clients){
+    public String getClientPayDate(Clients clients) {
         return getDate(database_instance.getPaymentDate(clients));
     }
 
-    public String Daysbetween(Clients client){
+    public String Daysbetween(Clients client) {
 
-        if (isClientExist(client)){
+        if (isClientExist(client)) {
             Calendar currentDate = Calendar.getInstance();
             Calendar paymentDate = database_instance.getPaymentDate(client);
-            String current = getDate(currentDate);
-            String payDate = getClientPayDate(client);
+
             DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate date1 = LocalDate.of(paymentDate.get(Calendar.YEAR),paymentDate.get(Calendar.MONTH),paymentDate.get(Calendar.DATE));
-            LocalDate date2 = LocalDate.of(currentDate.get(Calendar.YEAR),currentDate.get(Calendar.MONTH),currentDate.get(Calendar.DATE));
-            long daysBetween = ChronoUnit.DAYS.between(date1,date2);
+            LocalDate date1 = LocalDate.of(paymentDate.get(Calendar.YEAR), paymentDate.get(Calendar.MONTH), paymentDate.get(Calendar.DATE));
+            LocalDate date2 = LocalDate.of(currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE));
+            long daysBetween = ChronoUnit.DAYS.between(date1, date2);
             String text = "passed day(s) : " + daysBetween;
             return text;
         }

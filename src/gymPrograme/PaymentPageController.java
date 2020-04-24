@@ -63,13 +63,11 @@ public class PaymentPageController implements Initializable {
                 for (Clients client : managerPayment.getAllClients()) {
                     System.out.println(managerPayment.needsToPayStatus(client));
                     if (managerPayment.needsToPayStatus(client)) {
-                        if (!isOnList(client)) {
-                            clientsToPay.add(client);
-                        }
+                        addToList(client);
                     }
                 }
                 try {
-                    Thread.sleep(100000);
+                    Thread.sleep(50000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -82,11 +80,11 @@ public class PaymentPageController implements Initializable {
     private boolean isOnList(Clients clientSelected) {
         if (!clientsToPay.isEmpty()) {
             for (Clients client : clientsToPay) {
-                if (client == clientSelected) {
+                if (client.equals(clientSelected)) {
                     return true;
                 }
+                return false;
             }
-            return false;
         }
         return false;
     }
