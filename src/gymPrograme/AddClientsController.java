@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AddClientsController {
+    
 
     @FXML
     private TextField namefield_id, identificationField_id, phoneNumber_id, ageField_id;
@@ -61,6 +62,7 @@ public class AddClientsController {
             }
         } else {
             System.out.println("managerPayment = null !!");
+
         }
     }
 
