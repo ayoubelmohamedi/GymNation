@@ -64,12 +64,12 @@ public class AddClientsController {
         }
     }
 
-
+    public void cancelSaving(){
+        clearFields();
+    }
 
     private boolean validateJavaDate(String strDate) {
-        if (strDate.trim().equals("")) {
-            return true;
-        } else {
+        if (!strDate.trim().equals("")) {
             SimpleDateFormat sdfrmt = new SimpleDateFormat("MM/dd/yyyy");
             sdfrmt.setLenient(false);
             try {
@@ -79,6 +79,8 @@ public class AddClientsController {
                 System.out.println(strDate + " is Invalid Date format");
                 return false;
             }
+            return true;
+        } else {
             return true;
         }
     }
