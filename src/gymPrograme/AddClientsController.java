@@ -64,6 +64,8 @@ public class AddClientsController {
         }
     }
 
+
+
     private boolean validateJavaDate(String strDate) {
         if (strDate.trim().equals("")) {
             return true;

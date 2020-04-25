@@ -53,12 +53,7 @@ public class ManagerPayment {
     }
 
     public boolean isClientExist(Clients clientForCheck) {
-        for (Clients client : clientsList) {
-            if (client.getName().trim().equals(clientForCheck.getName()) || client.getIdCard().trim().equals(clientForCheck.getIdCard())) {
-                return true;
-            }
-        }
-        return false;
+        return clientsList.contains(clientForCheck);
     }
 
     public void paySubscription(Clients clientToPay) {
