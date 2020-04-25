@@ -120,6 +120,11 @@
                         </BorderPane>
                      </children>
                   </GridPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                     <center>
+                        <Button fx:id="deleteClient_id" mnemonicParsing="false" onAction="#deleteClient" text="Delete Client" textFill="#c91c1c" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
                </children>
             </GridPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
