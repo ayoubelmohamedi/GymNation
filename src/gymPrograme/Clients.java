@@ -60,7 +60,7 @@ public class Clients {
 	//TODO change the implementation  of hashcode and equals
     @Override
     public int hashCode() {
-        return this.getIdCard().hashCode();
+        return this.getIdCard().hashCode() + 57;
     }
 
     @Override

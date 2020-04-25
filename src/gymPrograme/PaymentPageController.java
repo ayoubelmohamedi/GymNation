@@ -61,13 +61,12 @@ public class PaymentPageController implements Initializable {
         Thread thread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 for (Clients client : managerPayment.getAllClients()) {
-                    System.out.println(managerPayment.needsToPayStatus(client));
                     if (managerPayment.needsToPayStatus(client)) {
                         addToList(client);
                     }
                 }
                 try {
-                    Thread.sleep(50000);
+                    Thread.sleep(100000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -77,20 +76,9 @@ public class PaymentPageController implements Initializable {
         thread.start();
     }
 
-    private boolean isOnList(Clients clientSelected) {
-        if (!clientsToPay.isEmpty()) {
-            for (Clients client : clientsToPay) {
-                if (client.equals(clientSelected)) {
-                    return true;
-                }
-                return false;
-            }
-        }
-        return false;
-    }
 
     public void addToList(Clients clients) {
-        if (!isOnList(clients)) {
+        if (!clientsToPay.contains(clients)) {
             clientsToPay.add(clients);
         }
     }
