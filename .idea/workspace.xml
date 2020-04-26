@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gymPrograme/ScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/ClientToPayListCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/ClientToPayListCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/Main.class" afterDir="false" />
-    </list>
+    <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

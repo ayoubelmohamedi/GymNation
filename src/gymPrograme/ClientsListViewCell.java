@@ -46,10 +46,7 @@ public class ClientsListViewCell extends ListCell<Clients> {
             }
             name_id.setText(clients.getName());
             idCard_id.setText(clients.getIdCard());
-//            if (clients.needsToPay()){
-//
-//
-//            }
+
 
             setText(null);
             setGraphic(gridPane_id);
