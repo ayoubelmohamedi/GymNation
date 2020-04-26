@@ -1,9 +1,13 @@
 package gymPrograme;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -25,6 +29,10 @@ public class ClientToPayListCell extends ListCell<Clients> {
 
     @FXML
     private GridPane gridPaneToPay_id;
+
+    @FXML
+    private Button detailButton_id;
+
 
     private FXMLLoader mLLoader;
 
@@ -56,6 +64,10 @@ public class ClientToPayListCell extends ListCell<Clients> {
             paymentTime_id.setText(paymentDate);
 
             lateForDay_id.setText(managerPayment.Daysbetween(clients));
+
+            detailButton_id.setOnAction(actionEvent -> {
+
+            });
 
             setText(null);
             setGraphic(gridPaneToPay_id);
