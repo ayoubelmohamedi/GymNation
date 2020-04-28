@@ -75,28 +75,28 @@
                      </center></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <left>
-                        <DatePicker BorderPane.alignment="CENTER" />
+                        <DatePicker fx:id="paymentDate_id" BorderPane.alignment="CENTER" />
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <left>
-                        <DatePicker BorderPane.alignment="CENTER" />
+                        <DatePicker fx:id="registerationDate_id" BorderPane.alignment="CENTER" />
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <left>
-                        <TextField BorderPane.alignment="CENTER" />
+                        <TextField fx:id="phoneNumber_id" BorderPane.alignment="CENTER" />
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <left>
-                        <TextField BorderPane.alignment="CENTER" />
+                        <TextField fx:id="ageField_id" BorderPane.alignment="CENTER" />
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <left>
-                        <TextField BorderPane.alignment="CENTER" />
+                        <TextField fx:id="idField_id" BorderPane.alignment="CENTER" />
                      </left>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <left>
-                        <TextField BorderPane.alignment="CENTER" />
+                        <TextField fx:id="fullName_id" BorderPane.alignment="CENTER" />
                      </left>
                   </BorderPane>
                   <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
@@ -110,12 +110,12 @@
                      <children>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <center>
-                              <Button mnemonicParsing="false" text="Save" BorderPane.alignment="CENTER" />
+                              <Button fx:id="saveBtn_id" mnemonicParsing="false" onAction="#saveFunc" text="Save" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                            <right>
-                              <Button mnemonicParsing="false" text="Cancel" BorderPane.alignment="CENTER" />
+                              <Button fx:id="cancelBtn_id" mnemonicParsing="false" onAction="#cancelFunc" text="Cancel" BorderPane.alignment="CENTER" />
                            </right>
                         </BorderPane>
                      </children>

@@ -33,6 +33,7 @@ public class ClientsListViewCell extends ListCell<Clients> {
     private Button detailButton_id;
 
     private FXMLLoader mLLoader;
+    private ClientsInfoController clientsInfoController;
 
     @Override
     protected void updateItem(Clients clients, boolean empty) {
@@ -55,13 +56,17 @@ public class ClientsListViewCell extends ListCell<Clients> {
             }
             name_id.setText(clients.getName());
             idCard_id.setText(clients.getIdCard());
-
             detailButton_id.setOnAction(actionEvent -> {
                 try {
-                    Stage stage = (Stage) detailButton_id.getScene().getWindow();
-                    Parent newParent = FXMLLoader.load(getClass().getResource("clientsInforPage.fxml"));
-                    stage.setScene(new Scene(newParent,600,400));
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/clientsInforPage.fxml"));
+                    Parent root = (Parent)loader.load();
+                    clientsInfoController = loader.getController();
+                    clientsInfoController.intializeClient(clients);
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root,600,400));
                     stage.show();
+
                 }catch (Exception e){
                     e.fillInStackTrace();
                 }
