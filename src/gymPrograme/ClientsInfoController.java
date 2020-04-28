@@ -33,7 +33,7 @@ public class ClientsInfoController implements Initializable {
 
     Clients client;
 
-    public void intializeClient(Clients clients){
+    public void intializeClient(Clients clients) {
         this.client = clients;
         if (client != null) {
             fullName_id.setText(client.getName());
@@ -45,23 +45,23 @@ public class ClientsInfoController implements Initializable {
         }
     }
 
-    public void deleteClient(){
+    public void deleteClient() {
 
     }
 
-    public void cancelFunc(){
+    public void cancelFunc() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/addClientsPage.fxml"));
-            Parent root = (Parent)loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root,600,400));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/sample.fxml"));
+            Parent root = (Parent) loader.load();
+            Stage stage = (Stage) this.cancelBtn_id.getScene().getWindow();
+            stage.setScene(new Scene(root, 600, 400));
             stage.show();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.fillInStackTrace();
         }
     }
 
-    public void saveFunc(){
+    public void saveFunc() {
 
     }
 

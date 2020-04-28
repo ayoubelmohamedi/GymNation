@@ -60,14 +60,14 @@ public class ClientsListViewCell extends ListCell<Clients> {
                 try {
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/clientsInforPage.fxml"));
-                    Parent root = (Parent)loader.load();
+                    Parent root = (Parent) loader.load();
                     clientsInfoController = loader.getController();
                     clientsInfoController.intializeClient(clients);
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root,600,400));
+                    Stage stage = (Stage) this.detailButton_id.getScene().getWindow();
+                    stage.setScene(new Scene(root, 600, 400));
                     stage.show();
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.fillInStackTrace();
                 }
             });

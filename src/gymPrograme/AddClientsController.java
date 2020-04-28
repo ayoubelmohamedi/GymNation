@@ -65,7 +65,7 @@ public class AddClientsController {
         }
     }
 
-    public void cancelSaving(){
+    public void cancelSaving() {
         clearFields();
     }
 

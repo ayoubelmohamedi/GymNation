@@ -53,11 +53,11 @@ public class Clients {
         return phoneNumber;
     }
 
-    public boolean needsToPay(){
-    	return paymentDate.getNeedsTopay();
-	}
+    public boolean needsToPay() {
+        return paymentDate.getNeedsTopay();
+    }
 
-	//TODO change the implementation  of hashcode and equals
+    //TODO change the implementation  of hashcode and equals
     @Override
     public int hashCode() {
         return this.getIdCard().hashCode() + 57;
@@ -65,10 +65,10 @@ public class Clients {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj){
+        if (this == obj) {
             return true;
         }
-        if (obj == null || (obj.getClass() != this.getClass())){
+        if (obj == null || (obj.getClass() != this.getClass())) {
             return false;
         }
         String objID = ((Clients) obj).getIdCard();
