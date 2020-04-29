@@ -63,6 +63,11 @@ public class ClientsInfoController implements Initializable {
     }
 
     public void saveFunc() {
+        if (checkIFchanged(client)){
+
+        }else {
+            cancelFunc();
+        }
 
     }
 
