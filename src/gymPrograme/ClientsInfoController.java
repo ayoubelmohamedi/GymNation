@@ -32,6 +32,7 @@ public class ClientsInfoController implements Initializable {
     Button cancelBtn_id;
 
     Clients client;
+    ManagerPayment managerPayment = new ManagerPayment();
 
     public void intializeClient(Clients clients) {
         this.client = clients;
@@ -63,6 +64,16 @@ public class ClientsInfoController implements Initializable {
 
     public void saveFunc() {
 
+    }
+
+    private boolean checkIFchanged(Clients clients) {
+        if ((fullName_id.getText().equals(clients.getName())) && (idField_id.getText().equals(clients.getIdCard())) ||
+                (ageField_id.getText().equals(String.valueOf(clients.getAge()))) || (phoneNumber_id.getText().equals(clients.getPhoneNumber()))
+                || registerationDate_id.getEditor().getText().equals(clients.getPaymentDate().getRegiterationDate())
+                || paymentDate_id.getEditor().getText().equals(managerPayment.getClientPayDate(clients))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
