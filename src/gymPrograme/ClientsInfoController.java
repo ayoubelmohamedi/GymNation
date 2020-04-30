@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 public class ClientsInfoController implements Initializable {
@@ -64,7 +65,19 @@ public class ClientsInfoController implements Initializable {
 
     public void saveFunc() {
         if (checkIFchanged(client)){
+            Clients newClient = new Clients(fullName_id.getText(),idField_id.getText(),phoneNumber_id.getText(),Integer.parseInt(ageField_id.getText()),client.getPaymentDate());
+            managerPayment.editClientInfo(client,newClient);
+            if ((!idField_id.getText().equals(client.getIdCard()) || (!paymentDate_id.getEditor().getText().equals(managerPayment.getClientPayDate(client)))) ){
+                String newPaymentdate = paymentDate_id.getEditor().getText();
+                Calendar newCalendar = Calendar.getInstance();
 
+                String [] date = newPaymentdate.split("/");
+                newCalendar.set(Calendar.DATE,Integer.parseInt(date[0]));
+                newCalendar.set(Calendar.MONTH,Integer.parseInt(date[1]));
+                newCalendar.set(Calendar.YEAR,Integer.parseInt(date[2]));
+                System.out.println(" save payment with day = "+date[0]+" and month = "+date[1] + " and year = "+ date[2]);
+                managerPayment.editPaymentDate(client,newClient,newCalendar);
+            }
         }else {
             cancelFunc();
         }
@@ -72,10 +85,8 @@ public class ClientsInfoController implements Initializable {
     }
 
     private boolean checkIFchanged(Clients clients) {
-        if ((fullName_id.getText().equals(clients.getName())) && (idField_id.getText().equals(clients.getIdCard())) ||
-                (ageField_id.getText().equals(String.valueOf(clients.getAge()))) || (phoneNumber_id.getText().equals(clients.getPhoneNumber()))
-                || registerationDate_id.getEditor().getText().equals(clients.getPaymentDate().getRegiterationDate())
-                || paymentDate_id.getEditor().getText().equals(managerPayment.getClientPayDate(clients))) {
+        if (fullName_id.getText().equals(clients.getName()) && idField_id.getText().equals(clients.getIdCard())
+                && ageField_id.getText().equals(String.valueOf(clients.getAge())) && phoneNumber_id.getText().equals(clients.getPhoneNumber())){
             return false;
         }
         return true;

@@ -85,11 +85,7 @@ public class ManagerPayment {
         if ((!oldClient.equals(newClient)) || (!getDate(database_instance.getPaymentDate(oldClient)).equals(newDate))){
             database_instance.updateClientPayment(newPaymentDate,oldClient,newClient);
         }
-
     }
-
-
-
 
     public boolean needsToPayStatus(Clients clients) {
         Date payDate = database_instance.getPaymentDate(clients).getTime();
