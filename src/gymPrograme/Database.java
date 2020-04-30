@@ -78,7 +78,7 @@ public class Database {
                 preparedStatement.setInt(7, clients.getPaymentDate().getRegisteredDate().get(Calendar.YEAR));
                 preparedStatement.executeUpdate();
 
-                System.out.println(clients.getName() + " Added successfuly to the database :D");
+                System.out.println(clients.getName() + " Added successfully to the database :D");
 
 //				statement.execute("insert into CLIENTS (name,id,phone,age) values (" + clients.getName() + ", "
 //						+ clients.getIdCard() + ", " + longNumber + ", " + clients.getAge() + ")");
@@ -142,7 +142,7 @@ public class Database {
 
             preparedStatement.executeUpdate();
 
-            System.out.println(clients22.getName() + " Added successfuly to payment database :DD");
+            System.out.println(clients22.getName() + " Added successfully to payment database :DD");
 
 //		statement.execute("insert into CLIENTS (name,id,phone,age) values (" + clients.getName() + ", "
 //				+ clients.getIdCard() + ", " + longNumber + ", " + clients.getAge() + ")");
@@ -176,7 +176,7 @@ public class Database {
             preparedStatement.setString(4, clientsName);
             preparedStatement.executeUpdate();
 
-            System.out.println(clients.getName() + "'s payment updated successfuly :D");
+            System.out.println(clients.getName() + "'s payment updated successfully :D");
 
 //			statement.execute("insert into CLIENTS (name,id,phone,age) values (" + clients.getName() + ", "
 //					+ clients.getIdCard() + ", " + longNumber + ", " + clients.getAge() + ")");
@@ -189,6 +189,36 @@ public class Database {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void updateClientInfo(Clients oldClient, Clients newClient){
+        String sqlite = "UPDATE CLIENTS SET name = ? , ID = ? ,phone = ? , age = ?  WHERE ID = ?";
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
+            statement = connection.createStatement();
+
+            String number = newClient.getPhoneNumber();
+            long longNumber = Long.parseLong(number);
+
+            preparedStatement = connection
+                    .prepareStatement(sqlite);
+            preparedStatement.setString(1, newClient.getName());
+            preparedStatement.setLong(2, longNumber);
+            preparedStatement.setString(3, newClient.getIdCard());
+            preparedStatement.setInt(4, newClient.getAge());
+            preparedStatement.setString(5,oldClient.getIdCard());
+
+            preparedStatement.executeUpdate();
+        }catch (SQLException e){
+
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     public Calendar getPaymentDate(Clients clients) {
