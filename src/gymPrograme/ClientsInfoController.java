@@ -65,11 +65,12 @@ public class ClientsInfoController implements Initializable {
 
     public void saveFunc() {
         if (checkIFchanged(client)){
-            Clients newClient = new Clients(fullName_id.getText(),idField_id.getText(),phoneNumber_id.getText(),Integer.parseInt(ageField_id.getText()),client.getPaymentDate());
+            Clients newClient = new Clients(fullName_id.getText().trim(),idField_id.getText().trim(),phoneNumber_id.getText().trim(),Integer.parseInt(ageField_id.getText().trim()),client.getPaymentDate());
             //save client info only without changing payment
+            System.out.println("client info changed ");
             managerPayment.editClientInfo(client,newClient);
-            if ((!idField_id.getText().equals(client.getIdCard()) || (!paymentDate_id.getEditor().getText().equals(managerPayment.getClientPayDate(client)))) ){
-                String newPaymentdate = paymentDate_id.getEditor().getText();
+            if ((!idField_id.getText().trim().equals(client.getIdCard()) || (!paymentDate_id.getEditor().getText().trim().equals(managerPayment.getClientPayDate(client)))) ){
+                String newPaymentdate = paymentDate_id.getEditor().getText().trim();
                 Calendar newCalendar = Calendar.getInstance();
 
                 String [] date = newPaymentdate.split("/");
@@ -81,14 +82,14 @@ public class ClientsInfoController implements Initializable {
                 managerPayment.editPaymentDate(client,newClient,newCalendar);
             }
         }else {
+            System.out.println("nothing changed");
             cancelFunc();
         }
-
     }
 
     private boolean checkIFchanged(Clients clients) {
-        if (fullName_id.getText().equals(clients.getName()) && idField_id.getText().equals(clients.getIdCard())
-                && ageField_id.getText().equals(String.valueOf(clients.getAge())) && phoneNumber_id.getText().equals(clients.getPhoneNumber())){
+        if (fullName_id.getText().trim().equals(clients.getName()) && idField_id.getText().trim().equals(clients.getIdCard())
+                && ageField_id.getText().trim().equals(String.valueOf(clients.getAge())) && phoneNumber_id.getText().trim().equals(clients.getPhoneNumber())){
             return false;
         }
         return true;
