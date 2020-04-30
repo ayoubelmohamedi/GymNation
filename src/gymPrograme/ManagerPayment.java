@@ -76,8 +76,11 @@ public class ManagerPayment {
     }
     //this method work for editing client's info
     public void editClientInfo(Clients oldClient, Clients newClient){
-        
+        database_instance.updateClientInfo(oldClient,newClient);
     }
+    
+
+
 
     public boolean needsToPayStatus(Clients clients) {
         Date payDate = database_instance.getPaymentDate(clients).getTime();

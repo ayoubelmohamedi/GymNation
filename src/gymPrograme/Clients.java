@@ -57,7 +57,7 @@ public class Clients {
         return paymentDate.getNeedsTopay();
     }
 
-    //TODO change the implementation  of hashcode and equals
+
     @Override
     public int hashCode() {
         return this.getIdCard().hashCode() + 57;
