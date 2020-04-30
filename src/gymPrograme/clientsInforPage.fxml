@@ -40,7 +40,7 @@
                      </center></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <center>
-                        <Label text="ID :" BorderPane.alignment="CENTER">
+                        <Label text="Phone Number :" BorderPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font></Label>
@@ -54,7 +54,7 @@
                      </center></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                      <center>
-                        <Label text="Phone number " BorderPane.alignment="CENTER">
+                        <Label text="ID :" BorderPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font></Label>
