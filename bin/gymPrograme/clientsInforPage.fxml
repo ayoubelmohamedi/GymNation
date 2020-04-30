@@ -79,7 +79,7 @@
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <left>
-                        <DatePicker fx:id="registerationDate_id" BorderPane.alignment="CENTER" />
+                        <DatePicker fx:id="registerationDate_id" disable="true" editable="false" BorderPane.alignment="CENTER" />
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <left>
