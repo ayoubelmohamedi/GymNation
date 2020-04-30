@@ -78,7 +78,16 @@ public class ManagerPayment {
     public void editClientInfo(Clients oldClient, Clients newClient){
         database_instance.updateClientInfo(oldClient,newClient);
     }
-    
+    //edit payment date
+    public void editPaymentDate(Clients oldClient,Clients newClient,Calendar newPaymentDate){
+        //equals refer to ID between two clients
+        String newDate = getDate(newPaymentDate);
+        if ((!oldClient.equals(newClient)) || (!getDate(database_instance.getPaymentDate(oldClient)).equals(newDate))){
+            database_instance.updateClientPayment(newPaymentDate,oldClient,newClient);
+        }
+
+    }
+
 
 
 
