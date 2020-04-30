@@ -66,6 +66,7 @@ public class ClientsInfoController implements Initializable {
     public void saveFunc() {
         if (checkIFchanged(client)){
             Clients newClient = new Clients(fullName_id.getText(),idField_id.getText(),phoneNumber_id.getText(),Integer.parseInt(ageField_id.getText()),client.getPaymentDate());
+            //save client info only without changing payment
             managerPayment.editClientInfo(client,newClient);
             if ((!idField_id.getText().equals(client.getIdCard()) || (!paymentDate_id.getEditor().getText().equals(managerPayment.getClientPayDate(client)))) ){
                 String newPaymentdate = paymentDate_id.getEditor().getText();
@@ -76,6 +77,7 @@ public class ClientsInfoController implements Initializable {
                 newCalendar.set(Calendar.MONTH,Integer.parseInt(date[1]));
                 newCalendar.set(Calendar.YEAR,Integer.parseInt(date[2]));
                 System.out.println(" save payment with day = "+date[0]+" and month = "+date[1] + " and year = "+ date[2]);
+                //save payment date
                 managerPayment.editPaymentDate(client,newClient,newCalendar);
             }
         }else {
