@@ -73,7 +73,10 @@ public class ManagerPayment {
         } else {
             System.out.println("NO such client found with the name of " + clientToPay.getName());
         }
-
+    }
+    //this method work for editing client's info
+    public void editClientInfo(Clients oldClient, Clients newClient){
+        
     }
 
     public boolean needsToPayStatus(Clients clients) {
