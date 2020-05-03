@@ -62,6 +62,7 @@ public class ClientsInfoController implements Initializable {
         if (result.get() == ButtonType.OK){
             managerPayment.deleteClient(client);
             alert.close();
+            cancelFunc();
         }else {
             alert.close();
         }
@@ -98,6 +99,7 @@ public class ClientsInfoController implements Initializable {
                 System.out.println(" save payment with day = "+date[0]+" and month = "+date[1] + " and year = "+ date[2]);
                 //save payment date
                 managerPayment.editPaymentDate(client,newClient,newCalendar);
+                cancelFunc();
             }
         }else {
             System.out.println("nothing changed");
