@@ -1,18 +1,24 @@
 package gymPrograme;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.awt.*;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ClientsInfoController implements Initializable {
@@ -47,10 +53,20 @@ public class ClientsInfoController implements Initializable {
         }
     }
 
+    @FXML
     public void deleteClient() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setContentText("confirme deliting client ?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            
+        }else {
 
+        }
     }
 
+    @FXML
     public void cancelFunc() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/sample.fxml"));
@@ -63,6 +79,7 @@ public class ClientsInfoController implements Initializable {
         }
     }
 
+    @FXML
     public void saveFunc() {
         if (checkIFchanged(client)){
             Clients newClient = new Clients(fullName_id.getText().trim(),idField_id.getText().trim(),phoneNumber_id.getText().trim(),Integer.parseInt(ageField_id.getText().trim()),client.getPaymentDate());
