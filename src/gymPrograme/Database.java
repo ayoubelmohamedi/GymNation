@@ -252,6 +252,52 @@ public class Database {
         }
     }
 
+    public void deleteClientInfo(Clients clients) {
+        String sqlite = "DELETE FROM CLIENTS WHERE ID = ? ";
+
+        try{
+            connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
+            statement = connection.createStatement();
+            preparedStatement = connection.prepareStatement(sqlite);
+            preparedStatement.setString(1,clients.getIdCard());
+            preparedStatement.executeUpdate();
+
+        } catch (Exception e){
+        e.fillInStackTrace();
+    }finally {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
+    public void deleteClientPayment(Clients clients){
+        String sqlite = "DELETE FROM PAYMENTS WHERE ID = ?";
+
+        try{
+            connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
+            statement = connection.createStatement();
+            preparedStatement = connection.prepareStatement(sqlite);
+            preparedStatement.setString(1,clients.getIdCard());
+            preparedStatement.executeUpdate();
+
+        } catch (Exception e){
+            e.fillInStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void deleteClientPayment(){
+
+    }
+
     public Calendar getPaymentDate(Clients clients) {
         Calendar paymentDate = Calendar.getInstance();
         try {
@@ -275,7 +321,6 @@ public class Database {
                 e.printStackTrace();
             }
         }
-
         return paymentDate;
     }
 
