@@ -61,9 +61,9 @@ public class ClientsInfoController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             managerPayment.deleteClient(client);
-            cancelFunc();
+            alert.close();
         }else {
-            cancelFunc();
+            alert.close();
         }
     }
 
