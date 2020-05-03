@@ -294,10 +294,6 @@ public class Database {
         }
     }
 
-    public void deleteClientPayment(){
-
-    }
-
     public Calendar getPaymentDate(Clients clients) {
         Calendar paymentDate = Calendar.getInstance();
         try {

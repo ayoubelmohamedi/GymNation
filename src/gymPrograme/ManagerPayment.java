@@ -87,6 +87,13 @@ public class ManagerPayment {
         }
     }
 
+    public void deleteClient(Clients clients){
+        if (clients != null){
+            database_instance.deleteClientInfo(clients);
+            database_instance.deleteClientPayment(clients);
+        }
+    }
+
     public boolean needsToPayStatus(Clients clients) {
         Date payDate = database_instance.getPaymentDate(clients).getTime();
         Date currentDate = Calendar.getInstance().getTime();
