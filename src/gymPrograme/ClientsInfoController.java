@@ -60,9 +60,10 @@ public class ClientsInfoController implements Initializable {
         alert.setContentText("confirme deliting client ?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-
+            managerPayment.deleteClient(client);
+            cancelFunc();
         }else {
-
+            cancelFunc();
         }
     }
 
