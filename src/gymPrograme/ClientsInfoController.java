@@ -49,7 +49,7 @@ public class ClientsInfoController implements Initializable {
             ageField_id.setText(String.valueOf(client.getAge()));
             phoneNumber_id.setText(client.getPhoneNumber());
             registerationDate_id.getEditor().setText(client.getPaymentDate().getRegiterationDate());
-            paymentDate_id.getEditor().setText(client.getPaymentDate().getPaymentDate());
+            paymentDate_id.getEditor().setText(managerPayment.getClientPayDate(client));
         }
     }
 
