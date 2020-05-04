@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c6b23b4-f1dc-4741-98b3-32256bf845c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/ClientsInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/ClientsInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gymPrograme/ManagerPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gymPrograme/ManagerPayment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gymDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/gymDataBase.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gymPrograme/ClientsInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gymPrograme/ClientsInfoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,10 +175,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1585858201926" />
-    <state x="1661" y="233" key="com.intellij.ide.util.TipDialog" timestamp="1588531343744">
+    <state x="1661" y="233" key="com.intellij.ide.util.TipDialog" timestamp="1588563102237">
       <screen x="1366" y="0" width="1440" height="900" />
     </state>
-    <state x="1661" y="233" key="com.intellij.ide.util.TipDialog/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1588531343744" />
+    <state x="1661" y="233" key="com.intellij.ide.util.TipDialog/67.27.1299.741/1366.0.1440.900@1366.0.1440.900" timestamp="1588563102237" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741/1366.0.1440.900@67.27.1299.741" timestamp="1587567789095" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1587427801974" />
     <state x="1854" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587578402686">

@@ -83,28 +83,39 @@ public class ClientsInfoController implements Initializable {
 
     @FXML
     public void saveFunc() {
-        if (checkIFchanged(client)){
-            Clients newClient = new Clients(fullName_id.getText().trim(),idField_id.getText().trim(),phoneNumber_id.getText().trim(),Integer.parseInt(ageField_id.getText().trim()),client.getPaymentDate());
-            //save client info only without changing payment
-            System.out.println("client info changed ");
-            managerPayment.editClientInfo(client,newClient);
-            if ((!idField_id.getText().trim().equals(client.getIdCard()) || (!paymentDate_id.getEditor().getText().trim().equals(managerPayment.getClientPayDate(client)))) ){
-                String newPaymentdate = paymentDate_id.getEditor().getText().trim();
-                Calendar newCalendar = Calendar.getInstance();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setContentText("confirme editing client ?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            if (checkIFchanged(client)){
+                Clients newClient = new Clients(fullName_id.getText().trim(),idField_id.getText().trim(),phoneNumber_id.getText().trim(),Integer.parseInt(ageField_id.getText().trim()),client.getPaymentDate());
+                //save client info only without changing payment
+                System.out.println("client info changed ");
+                managerPayment.editClientInfo(client,newClient);
+                if ((!idField_id.getText().trim().equals(client.getIdCard()) || (!paymentDate_id.getEditor().getText().trim().equals(managerPayment.getClientPayDate(client)))) ){
+                    String newPaymentdate = paymentDate_id.getEditor().getText().trim();
+                    Calendar newCalendar = Calendar.getInstance();
 
-                String [] date = newPaymentdate.split("/");
-                newCalendar.set(Calendar.DATE,Integer.parseInt(date[0]));
-                newCalendar.set(Calendar.MONTH,Integer.parseInt(date[1]));
-                newCalendar.set(Calendar.YEAR,Integer.parseInt(date[2]));
-                System.out.println(" save payment with day = "+date[0]+" and month = "+date[1] + " and year = "+ date[2]);
-                //save payment date
-                managerPayment.editPaymentDate(client,newClient,newCalendar);
+                    String [] date = newPaymentdate.split("/");
+                    newCalendar.set(Calendar.DATE,Integer.parseInt(date[0]));
+                    newCalendar.set(Calendar.MONTH,Integer.parseInt(date[1]));
+                    newCalendar.set(Calendar.YEAR,Integer.parseInt(date[2]));
+                    System.out.println(" save payment with day = "+date[0]+" and month = "+date[1] + " and year = "+ date[2]);
+                    //save payment date
+                    managerPayment.editPaymentDate(client,newClient,newCalendar);
+                    alert.close();
+                    cancelFunc();
+                }
+            }else {
+                System.out.println("nothing changed");
+                alert.close();
                 cancelFunc();
             }
         }else {
-            System.out.println("nothing changed");
-            cancelFunc();
+            alert.close();
         }
+
     }
 
     private boolean checkIFchanged(Clients clients) {
