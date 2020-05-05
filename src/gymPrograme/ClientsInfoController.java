@@ -98,13 +98,14 @@ public class ClientsInfoController implements Initializable {
                     Calendar newCalendar = Calendar.getInstance();
 
                     String [] date = newPaymentdate.split("/");
-                    newCalendar.set(Calendar.DATE,Integer.parseInt(date[0]));
-                    newCalendar.set(Calendar.MONTH,Integer.parseInt(date[1]));
+                    newCalendar.set(Calendar.MONTH,Integer.parseInt(date[0]));
+                    newCalendar.set(Calendar.DATE,Integer.parseInt(date[1]));
                     newCalendar.set(Calendar.YEAR,Integer.parseInt(date[2]));
-                    System.out.println(" save payment with day = "+date[0]+" and month = "+date[1] + " and year = "+ date[2]);
+
                     //save payment date
                     managerPayment.editPaymentDate(client,newClient,newCalendar);
                     alert.close();
+
                     cancelFunc();
                 }
             }else {
@@ -120,7 +121,7 @@ public class ClientsInfoController implements Initializable {
 
     private boolean checkIFchanged(Clients clients) {
         if (fullName_id.getText().trim().equals(clients.getName()) && idField_id.getText().trim().equals(clients.getIdCard())
-                && ageField_id.getText().trim().equals(String.valueOf(clients.getAge())) && phoneNumber_id.getText().trim().equals(clients.getPhoneNumber())){
+                && ageField_id.getText().trim().equals(String.valueOf(clients.getAge())) && phoneNumber_id.getText().trim().equals(clients.getPhoneNumber())  && paymentDate_id.getEditor().getText().trim().equals(managerPayment.getClientPayDate(clients))){
             return false;
         }
         return true;

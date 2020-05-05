@@ -203,8 +203,8 @@ public class Database {
             preparedStatement = connection
                     .prepareStatement(sqlite);
             preparedStatement.setString(1, newClient.getName());
-            preparedStatement.setLong(2, longNumber);
-            preparedStatement.setString(3, newClient.getIdCard());
+            preparedStatement.setString(2, newClient.getIdCard());
+            preparedStatement.setLong(3, longNumber);
             preparedStatement.setInt(4, newClient.getAge());
             preparedStatement.setString(5,oldClient.getIdCard());
 
