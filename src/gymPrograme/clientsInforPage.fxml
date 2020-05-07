@@ -83,7 +83,7 @@
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <left>
-                        <TextField fx:id="idField_id" BorderPane.alignment="CENTER" />
+                        <TextField fx:id="idField_id" editable="false" BorderPane.alignment="CENTER" />
                      </left></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <left>
