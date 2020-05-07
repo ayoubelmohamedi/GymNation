@@ -144,8 +144,6 @@ public class Database {
 
             System.out.println(clients22.getName() + " Added successfully to payment database :DD");
 
-//		statement.execute("insert into CLIENTS (name,id,phone,age) values (" + clients.getName() + ", "
-//				+ clients.getIdCard() + ", " + longNumber + ", " + clients.getAge() + ")");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -210,38 +208,6 @@ public class Database {
 
             preparedStatement.executeUpdate();
         }catch (SQLException e){
-            e.fillInStackTrace();
-        }finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    public void updateClientPayment(Calendar newPaymentDate,Clients oldClient, Clients newClient){
-        String sqlite = "UPDATE PAYMENTS SET ID = ? , payDAY = ? , payMONTH = ? , payYEAR = ? WHERE ID = ?";
-        try{
-
-            int DAY = newPaymentDate.get(Calendar.DATE);
-            int MONTH = newPaymentDate.get(Calendar.MONTH);
-            int YEAR = newPaymentDate.get(Calendar.YEAR);
-
-            connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
-            statement = connection.createStatement();
-
-            preparedStatement = connection
-                    .prepareStatement(sqlite);
-            preparedStatement.setString(1, newClient.getIdCard());
-            preparedStatement.setInt(2, DAY);
-            preparedStatement.setInt(3, MONTH);
-            preparedStatement.setInt(4, YEAR);
-            preparedStatement.setString(5,oldClient.getIdCard());
-
-            preparedStatement.executeUpdate();
-        }catch (Exception e){
             e.fillInStackTrace();
         }finally {
             try {

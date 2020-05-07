@@ -74,21 +74,26 @@ public class ManagerPayment {
             System.out.println("NO such client found with the name of " + clientToPay.getName());
         }
     }
+
     //this method work for editing client's info
-    public void editClientInfo(Clients oldClient, Clients newClient){
-        database_instance.updateClientInfo(oldClient,newClient);
+    public void editClientInfo(Clients oldClient, Clients newClient) {
+        database_instance.updateClientInfo(oldClient, newClient);
     }
+
     //edit payment date
-    public void editPaymentDate(Clients oldClient,Clients newClient,Calendar newPaymentDate){
+    public void editPaymentDate(Clients oldClient, Clients newClient, Calendar newPaymentDate) {
         //equals refer to ID between two clients
         String newDate = getDate(newPaymentDate);
-        if ((!oldClient.equals(newClient)) || (!getDate(database_instance.getPaymentDate(oldClient)).equals(newDate))){
-            database_instance.updateClientPayment(newPaymentDate,oldClient,newClient);
+        if ((!oldClient.equals(newClient)) || (!(getDate(database_instance.getPaymentDate(oldClient)).equals(newDate)))) {
+            System.out.println("client new payment date is = " + newDate + "and ID is "+newClient.getIdCard());
+//            database_instance.updateClientPayment(newPaymentDate, oldClient, newClient);
+            database_instance.modifyPaymentDate(newPaymentDate,newClient);
+            System.out.println("payment date changed");
         }
     }
 
-    public void deleteClient(Clients clients){
-        if (clients != null){
+    public void deleteClient(Clients clients) {
+        if (clients != null) {
             database_instance.deleteClientInfo(clients);
             database_instance.deleteClientPayment(clients);
         }
@@ -109,7 +114,7 @@ public class ManagerPayment {
     }
 
     private String getDate(Calendar cal) {
-        return "" + cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
+        return "" + cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MONTH)) + "/" + cal.get(Calendar.YEAR);
     }
 
     public String getClientPayDate(Clients clients) {

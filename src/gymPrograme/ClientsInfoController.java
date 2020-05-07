@@ -11,11 +11,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.awt.*;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.Calendar;
 import java.util.Optional;
@@ -89,6 +87,7 @@ public class ClientsInfoController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             if (checkIFchanged(client)){
+
                 Clients newClient = new Clients(fullName_id.getText().trim(),idField_id.getText().trim(),phoneNumber_id.getText().trim(),Integer.parseInt(ageField_id.getText().trim()),client.getPaymentDate());
                 //save client info only without changing payment
                 System.out.println("client info changed ");
@@ -105,7 +104,6 @@ public class ClientsInfoController implements Initializable {
                     //save payment date
                     managerPayment.editPaymentDate(client,newClient,newCalendar);
                     alert.close();
-
                     cancelFunc();
                 }
             }else {
