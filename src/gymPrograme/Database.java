@@ -240,12 +240,12 @@ public class Database {
     }
 
     public void deleteClientPayment(Clients clients){
-        String sqlite = "DELETE FROM PAYMENTS WHERE ID = ?";
+        String sql = "DELETE FROM PAYMENTS WHERE clientID = ? ";
 
         try{
             connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
             statement = connection.createStatement();
-            preparedStatement = connection.prepareStatement(sqlite);
+            preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,clients.getIdCard());
             preparedStatement.executeUpdate();
 
