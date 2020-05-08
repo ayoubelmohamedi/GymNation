@@ -62,9 +62,9 @@ public class Controller implements Initializable {
                     String lowerCaseFilter = newValue.toLowerCase();
 
                     if (clients.getName().toLowerCase().contains(lowerCaseFilter)) {
-                        return true; // Filter matches first name.
+                        return true; // Filter matches client name.
                     } else if (clients.getIdCard().toLowerCase().contains(lowerCaseFilter)) {
-                        return true; // Filter matches Id.
+                        return true; // Filter matches client Id.
                     }
                     return false; // Does not match.
                 });

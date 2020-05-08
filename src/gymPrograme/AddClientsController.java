@@ -38,7 +38,7 @@ public class AddClientsController {
                     clientAge = Integer.parseInt(ageField_id.getText());
                 } else {
                     clientAge = 0;
-                    System.out.println("(is empty or null) give default value 0");
+                    System.out.println("(is empty or null) give default value = 0");
                 }
 
                 String[] dateParts = clientDate.split("/");
@@ -56,7 +56,6 @@ public class AddClientsController {
                     Controller.clientsObservableList.add(newClients);
                     System.out.println(clientName + " added successfully :D ");
                 }
-
                 clearFields();
             }
         } else {

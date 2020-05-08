@@ -114,7 +114,7 @@ public class ManagerPayment {
     }
 
     private String getDate(Calendar cal) {
-        return "" + cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MONTH)) + "/" + cal.get(Calendar.YEAR);
+        return "" + cal.get(Calendar.MONTH) + "/" + (cal.get(Calendar.DATE)) + "/" + cal.get(Calendar.YEAR);
     }
 
     public String getClientPayDate(Clients clients) {
@@ -130,7 +130,8 @@ public class ManagerPayment {
             DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate date1 = LocalDate.of(paymentDate.get(Calendar.YEAR), paymentDate.get(Calendar.MONTH), paymentDate.get(Calendar.DATE));
             LocalDate date2 = LocalDate.of(currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE));
-            long daysBetween = ChronoUnit.DAYS.between(date1, date2);
+
+            long daysBetween = ChronoUnit.DAYS.between(date1, date2) + 1;
             String text = "passed day(s) : " + daysBetween;
             return text;
         }

@@ -32,7 +32,7 @@ public class DateTime {
 
 
     public String getRegiterationDate() {
-        String str = getDay() + "/" + getMonth() + "/" + getYear();
+        String str =  getMonth() + "/" + getDay() + "/" + getYear();
         return str;
     }
 
