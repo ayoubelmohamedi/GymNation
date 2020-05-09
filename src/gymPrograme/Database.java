@@ -270,7 +270,7 @@ public class Database {
             while (res.next()) {
                 if (res.getString("clientID").equals(clients.getIdCard())) {
                     paymentDate.set(Calendar.DATE, res.getInt("payDAY"));
-                    paymentDate.set(Calendar.MONTH, res.getInt("payMONTH") - 1);
+                    paymentDate.set(Calendar.MONTH, res.getInt("payMONTH"));
                     paymentDate.set(Calendar.YEAR, res.getInt("payYEAR"));
                 }
             }

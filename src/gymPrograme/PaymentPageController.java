@@ -40,23 +40,6 @@ public class PaymentPageController implements Initializable {
         startThread();
     }
 
-//    public void initialize(){
-//        task = new Task<>() {
-//            @Override
-//            protected ObservableList<Clients> call() {
-//                for (Clients client : managerPayment.getAllClients()) {
-//                    if (managerPayment.needsToPayStatus(client)) {
-//                        clientsToPay.add(client);
-//                    }
-//                }
-//                return clientsToPay;
-//            }
-//        };
-////        payClientsListView.setItems(clientsToPay);
-////        payClientsListView.setCellFactory(clientsListView -> new ClientsListViewCell());
-//        payClientsListView.itemsProperty().bind(task.valueProperty());
-//    }
-
     private void startThread() {
         Thread thread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
