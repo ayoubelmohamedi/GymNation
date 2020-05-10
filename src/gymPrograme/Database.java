@@ -161,8 +161,6 @@ public class Database {
             int MONTH = newPaymentDay.get(Calendar.MONTH);
             int YEAR = newPaymentDay.get(Calendar.YEAR);
 
-            String clientsName = clients.getIdCard();
-
             String sqlite = "UPDATE PAYMENTS SET payDAY = ? , payMONTH = ? , payYEAR = ? WHERE clientID = ? ";
             connection = DriverManager.getConnection("jdbc:sqlite:gymDataBase.db");
             statement = connection.createStatement();
@@ -171,7 +169,7 @@ public class Database {
             preparedStatement.setInt(1, DAY);
             preparedStatement.setInt(2, MONTH);
             preparedStatement.setInt(3, YEAR);
-            preparedStatement.setString(4, clientsName);
+            preparedStatement.setString(4, clients.getIdCard());
             preparedStatement.executeUpdate();
 
             System.out.println(clients.getName() + "'s payment updated successfully :D");

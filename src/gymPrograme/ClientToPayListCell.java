@@ -6,14 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class ClientToPayListCell extends ListCell<Clients> {
 
@@ -62,7 +61,6 @@ public class ClientToPayListCell extends ListCell<Clients> {
                     e.printStackTrace();
                 }
             }
-
             String paymentDate = managerPayment.getClientPayDate(clients);
 
             nameField_id.setText(clients.getName());
@@ -86,7 +84,15 @@ public class ClientToPayListCell extends ListCell<Clients> {
             });
 
             payButton_id.setOnAction(actionEvent -> {
-                managerPayment.paySubscription(clients);
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setContentText("confirme payment ?");
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK) {
+                    managerPayment.paySubscription(clients);
+                }else{
+                    alert.close();
+                }
             });
 
             setText(null);

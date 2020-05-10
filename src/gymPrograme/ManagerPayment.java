@@ -59,12 +59,10 @@ public class ManagerPayment {
     public void paySubscription(Clients clientToPay) {
         if (isClientExist(clientToPay)) {
             if (needsToPayStatus(clientToPay)) {
-                Calendar clientsLastPayment = database_instance.getPaymentDate(clientToPay);
-                Calendar updatePayment = clientsLastPayment;
-                updatePayment.add(Calendar.MONTH, 1);
+                Calendar updatePayment = database_instance.getPaymentDate(clientToPay);
+                updatePayment.add(Calendar.MONTH, 2);
                 database_instance.modifyPaymentDate(updatePayment, clientToPay);
-                //TODO : store payment time in database
-//				Database.editPayment(clientToPay);
+
                 clientToPay.getPaymentDate().setNeedsToPay(false);
                 System.out.println(clientToPay.getName() + " SUCCESSFULY PAYED");
             } else {

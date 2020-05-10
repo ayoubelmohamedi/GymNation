@@ -58,7 +58,6 @@ public class ClientsListViewCell extends ListCell<Clients> {
             idCard_id.setText(clients.getIdCard());
             detailButton_id.setOnAction(actionEvent -> {
                 try {
-
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/clientsInforPage.fxml"));
                     Parent root = (Parent) loader.load();
                     clientsInfoController = loader.getController();
@@ -66,7 +65,6 @@ public class ClientsListViewCell extends ListCell<Clients> {
                     Stage stage = (Stage) this.detailButton_id.getScene().getWindow();
                     stage.setScene(new Scene(root, 600, 400));
                     stage.show();
-
                 } catch (Exception e) {
                     e.fillInStackTrace();
                 }
