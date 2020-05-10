@@ -36,9 +36,6 @@ public class DateTime {
         return str;
     }
 
-    public String getPaymentDate() {
-        return "" + registeredDate.get(Calendar.DATE) + "/" + (registeredDate.get(Calendar.MONTH) + 1) + "/" + registeredDate.get(Calendar.YEAR);
-    }
 
     //this getter for regestiration day
     public int getDay() {

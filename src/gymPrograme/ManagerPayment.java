@@ -103,18 +103,19 @@ public class ManagerPayment {
         Date payDate = database_instance.getPaymentDate(clients).getTime();
         Date currentDate = Calendar.getInstance().getTime();
 
-        System.out.println("payment day : " + payDate);
-        System.out.println("current day : " + currentDate);
-        if (payDate.compareTo(currentDate) >= 0) {
+        System.out.println("paymentDate = "+ payDate );
+        System.out.println("current Date = " + currentDate);
+        if (payDate.compareTo(currentDate) > 0) {
             clients.getPaymentDate().setNeedsToPay(false);
             return false;
+        }else {
+            clients.getPaymentDate().setNeedsToPay(true);
+            return true;
         }
-        clients.getPaymentDate().setNeedsToPay(true);
-        return true;
     }
 
     private String getDate(Calendar cal) {
-        return "" + cal.get(Calendar.MONTH) + "/" + (cal.get(Calendar.DATE)) + "/" + cal.get(Calendar.YEAR);
+        return "" + (cal.get(Calendar.MONTH) + 1) + "/" + (cal.get(Calendar.DATE)) + "/" + cal.get(Calendar.YEAR);
     }
 
     public String getClientPayDate(Clients clients) {
@@ -131,7 +132,7 @@ public class ManagerPayment {
             LocalDate date1 = LocalDate.of(paymentDate.get(Calendar.YEAR), paymentDate.get(Calendar.MONTH), paymentDate.get(Calendar.DATE));
             LocalDate date2 = LocalDate.of(currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE));
 
-            long daysBetween = ChronoUnit.DAYS.between(date1, date2) + 1;
+            long daysBetween = ChronoUnit.DAYS.between(date1, date2);
             String text = "passed day(s) : " + daysBetween;
             return text;
         }

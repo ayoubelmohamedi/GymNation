@@ -44,6 +44,7 @@ public class PaymentPageController implements Initializable {
         Thread thread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 for (Clients client : managerPayment.getAllClients()) {
+                    System.out.println(client.getName()+" status : " + managerPayment.needsToPayStatus(client));
                     if (managerPayment.needsToPayStatus(client)) {
                         addToList(client);
                     }
