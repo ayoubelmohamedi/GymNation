@@ -1,21 +1,14 @@
 package gymPrograme;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -60,13 +53,11 @@ public class PaymentPageController implements Initializable {
         thread.start();
     }
 
-
     public void addToList(Clients clients) {
         if (!clientsToPay.contains(clients)) {
             clientsToPay.add(clients);
         }
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

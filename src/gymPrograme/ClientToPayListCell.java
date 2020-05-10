@@ -4,11 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -32,6 +35,9 @@ public class ClientToPayListCell extends ListCell<Clients> {
 
     @FXML
     private Button detailButton_id;
+
+    @FXML
+    private Button payButton_id;
 
 
     private FXMLLoader mLLoader;
@@ -66,7 +72,21 @@ public class ClientToPayListCell extends ListCell<Clients> {
             lateForDay_id.setText(managerPayment.Daysbetween(clients));
 
             detailButton_id.setOnAction(actionEvent -> {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gymPrograme/clientsInforPage.fxml"));
+                try {
+                    Parent root = (Parent) loader.load();
+                    ClientsInfoController clientsInfoController = loader.getController();
+                    clientsInfoController.intializeClient(clients);
+                    Stage stage = (Stage) this.detailButton_id.getScene().getWindow();
+                    stage.setScene(new Scene(root, 600, 400));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
+            payButton_id.setOnAction(actionEvent -> {
+                managerPayment.paySubscription(clients);
             });
 
             setText(null);
