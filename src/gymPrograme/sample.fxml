@@ -15,7 +15,7 @@
                         </ImageView>
                     </graphic>
                     <content>
-                        <fx:include fx:id="addClientTab_id" source="addClientsPage.fxml" />
+                        <fx:include fx:id="addClientTab_id" source="addClientsPage.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </content>
                 </Tab>
                 <Tab text="Clients">
@@ -73,7 +73,7 @@
                         </ImageView>
                     </graphic>
                     <content>
-                        <fx:include fx:id="paymentTab_id" source="paymentPage.fxml" />
+                        <fx:include fx:id="paymentTab_id" source="paymentPage.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
                     </content>
                 </Tab>
             </tabs>
