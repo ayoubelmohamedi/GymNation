@@ -62,7 +62,11 @@ public class ManagerPayment {
                 Calendar updatePayment = database_instance.getPaymentDate(clientToPay);
                 updatePayment.add(Calendar.MONTH, 2);
                 database_instance.modifyPaymentDate(updatePayment, clientToPay);
-
+                if (!needsToPayStatus(clientToPay)){
+                    PaymentPageController.clientsToPay.remove(clientToPay);
+                }else{
+                    PaymentPageController.refreshList();
+                }
                 clientToPay.getPaymentDate().setNeedsToPay(false);
                 System.out.println(clientToPay.getName() + " SUCCESSFULY PAYED");
             } else {

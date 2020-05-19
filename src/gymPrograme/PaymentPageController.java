@@ -25,7 +25,7 @@ public class PaymentPageController implements Initializable {
 
 //    private Task<ObservableList<Clients>> task;
 
-    ManagerPayment managerPayment;
+    static ManagerPayment managerPayment;
 
     public PaymentPageController() {
         clientsToPay = FXCollections.observableArrayList();
@@ -53,7 +53,16 @@ public class PaymentPageController implements Initializable {
         thread.start();
     }
 
-    public void addToList(Clients clients) {
+    public static void refreshList(){
+        for (Clients client : managerPayment.getAllClients()) {
+            System.out.println(client.getName()+" status : " + managerPayment.needsToPayStatus(client));
+            if (managerPayment.needsToPayStatus(client)) {
+                addToList(client);
+            }
+        }
+    }
+
+    public static void addToList(Clients clients) {
         if (!clientsToPay.contains(clients)) {
             clientsToPay.add(clients);
         }
