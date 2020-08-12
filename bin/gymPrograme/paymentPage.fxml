@@ -21,9 +21,9 @@
                             <children>
                                 <BorderPane prefHeight="42.0" prefWidth="53.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <center>
-                                        <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                                            <Image url="@/toolbarButtonGraphics/general/Search24.gif" />
-                                        </ImageView>
+<!--                                        <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">-->
+<!--                                            <Image url="@/toolbarButtonGraphics/general/Search24.gif" />-->
+<!--                                        </ImageView>-->
                                     </center>
                                 </BorderPane>
                             </children>

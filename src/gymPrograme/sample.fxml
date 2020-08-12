@@ -9,21 +9,21 @@
         <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
             <tabs>
                 <Tab text="Add">
-                    <graphic>
-                        <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/Add24.gif" />
-                        </ImageView>
-                    </graphic>
+<!--                    <graphic>-->
+<!--                        <ImageView>-->
+<!--                            <Image url="@/toolbarButtonGraphics/general/Add24.gif" />-->
+<!--                        </ImageView>-->
+<!--                    </graphic>-->
                     <content>
                         <fx:include fx:id="addClientTab_id" source="addClientsPage.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </content>
                 </Tab>
                 <Tab text="Clients">
-                    <graphic>
-                        <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/History24.gif" />
-                        </ImageView>
-                    </graphic>
+<!--                    <graphic>-->
+<!--                        <ImageView>-->
+<!--                            <Image url="@/toolbarButtonGraphics/general/History24.gif" />-->
+<!--                        </ImageView>-->
+<!--                    </graphic>-->
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -37,9 +37,9 @@
                                              <children>
                                                 <BorderPane layoutX="-51.0" layoutY="-81.0" prefHeight="38.0" prefWidth="63.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <center>
-                                                      <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                                                       <Image url="@/toolbarButtonGraphics/general/Search24.gif" />
-                                                      </ImageView>
+<!--                                                      <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">-->
+<!--                                                       <Image url="@/toolbarButtonGraphics/general/Search24.gif" />-->
+<!--                                                      </ImageView>-->
                                                    </center>
                                                 </BorderPane>
                                              </children>
@@ -67,11 +67,11 @@
                     </content>
                 </Tab>
                 <Tab text="Payments">
-                    <graphic>
-                        <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/Information24.gif" />
-                        </ImageView>
-                    </graphic>
+<!--                    <graphic>-->
+<!--                        <ImageView>-->
+<!--                            <Image url="@/toolbarButtonGraphics/general/Information24.gif" />-->
+<!--                        </ImageView>-->
+<!--                    </graphic>-->
                     <content>
                         <fx:include fx:id="paymentTab_id" source="paymentPage.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
                     </content>
