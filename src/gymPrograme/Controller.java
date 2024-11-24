@@ -21,7 +21,11 @@ public class Controller implements Initializable {
     private TextField searchBarMain_id;
 
     ManagerPayment managerPayment;
-    public static ObservableList<Clients> clientsObservableList;
+    private static ObservableList<Clients> clientsObservableList;
+
+    public static  ObservableList<Clients> getObservableList(){
+        return (clientsObservableList);
+    }
 
     public Controller() {
         clientsObservableList = FXCollections.observableArrayList();
@@ -29,7 +33,7 @@ public class Controller implements Initializable {
 
         //add to observableList
         if (managerPayment.getAllClients() != null) {
-            clientsObservableList.addAll(managerPayment.getAllClients());
+            getObservableList().addAll(managerPayment.getAllClients());
         } else {
             System.out.println("there is no clients");
         }
@@ -37,14 +41,14 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (clientsObservableList.isEmpty()) {
+        if (getObservableList().isEmpty()) {
             allClientsList.setPlaceholder(new Label("No Client found !"));
         } else {
-            allClientsList.setItems(clientsObservableList);
+            allClientsList.setItems(getObservableList());
             allClientsList.setCellFactory(clientsListView -> new ClientsListViewCell());
 
             // 1. Wrap the ObservableList in a FilteredList (initially display all data).
-            FilteredList<Clients> filteredData = new FilteredList<>(clientsObservableList, p -> true);
+            FilteredList<Clients> filteredData = new FilteredList<>(getObservableList(), p -> true);
 
             // 2. Set the filter Predicate whenever the filter changes.
             searchBarMain_id.textProperty().addListener((observable, oldValue, newValue) -> {
